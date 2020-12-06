@@ -26,7 +26,7 @@
     @yield('headerjs')
 </head>
 <body>
-
+@include('home._humberger')
 @include('home._header')
 
 @include('home._herosection')

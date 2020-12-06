@@ -7,7 +7,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="header__top__left">
                         <ul>
-                            <li></li>
+                            <li><i class="fa fa-envelope"></i> unsalmustafa3541@gmail.com</li>
                             <li></li>
                         </ul>
                     </div>
