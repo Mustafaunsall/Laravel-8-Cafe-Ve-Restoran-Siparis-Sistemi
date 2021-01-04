@@ -1,78 +1,74 @@
-<!-- Footer Section Begin -->
-<footer class="footer spad">
+
+<!-- Footer-->
+<section class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="footer__about">
-                    <div class="footer__about__logo">
-                        <a href="./index.html"><img src="{{asset('assets')}}/img/logo.png" alt=""></a>
-                    </div>
-                    <ul>
-                        <li>Address: 60-49 Road 11378 New York</li>
-                        <li>Phone: +65 11.188.888</li>
-                        <li>Email: hello@colorlib.com</li>
-                    </ul>
+            <div class="col-md-4 col-sm-12">
+                <h1>About us</h1>
+                <p>Duis leo justo, condimentum at purus eu,Aenean sed dolor sem. Etiam massa libero, auctor vitae egestas et, accumsan quis nunc.Duis leo justo, condimentum at purus eu, posuere pretium tellus.</p>
+                <a href="./about.html">Read more &rarr;</a>
+            </div>
+            <div class="col-md-4  col-sm-6">
+                <h1>Recent post</h1>
+                <div class="footer-blog clearfix">
+                    <a href="./blog_right_sidebar.html">
+                        <img src="{{asset('assets')}}/restaurant/img/thumb8.png" class="img-responsive footer-photo" alt="blog photos">
+                        <p class="footer-blog-text">Hand picked ingredients for our best customers</p>
+                        <p class="footer-blog-date">29 may 2015</p>
+                    </a>
+                </div>
+                <div class="footer-blog clearfix last">
+                    <a href="./blog_right_sidebar.html">
+                        <img src="{{asset('assets')}}/restaurant/img/thumb9.png" class="img-responsive footer-photo" alt="blog photos">
+                        <p class="footer-blog-text">Daily special foods that you will going to love</p>
+                        <p class="footer-blog-date">29 may 2015</p>
+                    </a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-                <div class="footer__widget">
-                    <h6>Useful Links</h6>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">About Our Shop</a></li>
-                        <li><a href="#">Secure Shopping</a></li>
-                        <li><a href="#">Delivery infomation</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Our Sitemap</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="{#">Who We Are</a></li>
-                        <li><a href="#">Our Services</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Innovation</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-12">
-                <div class="footer__widget">
-                    <h6>Join Our Newsletter Now</h6>
-                    <p>Get E-mail updates about our latest shop and special offers.</p>
-                    <form action="#">
-                        <input type="text" placeholder="Enter your mail">
-                        <button type="submit" class="site-btn">Subscribe</button>
-                    </form>
-                    <div class="footer__widget__social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-pinterest"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="footer__copyright">
-                    <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |Mustafa Ünsal
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
 
+            <div class="col-md-4  col-sm-6">
+                <h1>Reach us</h1>
+                <div class="footer-social-icons">
+                    <a href="http://www.facebook.com">
+                        <i class="fa fa-facebook-square"></i>
+                    </a>
+                    <a href="http://www.twitter.com">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="http://plus.google.com">
+                        <i class="fa fa-google"></i>
+                    </a>
+                    <a href="http://www.youtube.com">
+                        <i class="fa fa-youtube-play"></i>
+                    </a>
+                    <a href="http://www.vimeo.com">
+                        <i class="fa fa-vimeo"></i>
+                    </a>
+                    <a href="http://www.pinterest.com">
+                        <i class="fa fa-pinterest-p"></i>
+                    </a>
+                    <a href="http://www.linkedin.com">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </div>
+                <div class="footer-address">
+                    <p><i class="fa fa-map-marker"></i>28 Seventh Avenue, Neew York, 10014</p>
+                    <p><i class="fa fa-phone"></i>Phone: (415) 124-5678</p>
+                    <p><i class="fa fa-envelope-o"></i>support@restaurant.com</p>
                 </div>
             </div>
         </div>
     </div>
-</footer>
-<!-- Footer Section End -->
 
-<!-- Js Plugins -->
-<script src="{{asset('assets')}}/js/jquery-3.3.1.min.js"></script>
-<script src="{{asset('assets')}}/js/bootstrap.min.js"></script>
-<script src="{{asset('assets')}}/js/jquery.nice-select.min.js"></script>
-<script src="{{asset('assets')}}/js/jquery-ui.min.js"></script>
-<script src="{{asset('assets')}}/js/jquery.slicknav.js"></script>
-<script src="{{asset('assets')}}/js/mixitup.min.js"></script>
-<script src="{{asset('assets')}}/js/owl.carousel.min.js"></script>
-<script src="{{asset('assets')}}/js/main.js"></script>
+    <!-- Footer - Copyright -->
+    <div class="footer-copyrights">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><i class="fa fa-copyright"></i> 2015.Tomato.All rights reserved. Designed with <i class="fa fa-heart primary-color"></i> by Surjithctly</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 

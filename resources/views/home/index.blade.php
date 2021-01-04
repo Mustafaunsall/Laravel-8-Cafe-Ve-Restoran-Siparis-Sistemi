@@ -6,4 +6,4 @@
 
     Organik Yemeklerin Tek Adresi
 @endsection
-@section('keywords','organik,ilaçsız,gübresiz')
+@section('keywords','organik,ilaçsız,gübresiz,restaurant, template, food, reservation')
