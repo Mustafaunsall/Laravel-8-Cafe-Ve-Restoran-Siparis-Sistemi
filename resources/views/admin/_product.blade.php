@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{asset('assets')}}/admin/images/favicon.ico" type="image/ico" />
 
-    <title> Categories </title>
+    <title> Products </title>
 
     <!-- Bootstrap -->
     <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
@@ -57,7 +57,7 @@
         <div class="">
             <div class="page-title">
                 <div class="title_left">
-                    <h3>Categories </h3>
+                    <h3>Products </h3>
                 </div>
 
 
@@ -69,8 +69,8 @@
                 <div class="col-md-12 col-sm-12 ">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>Category Table </h2>
-                            <button type="button" class="btn btn-round btn-warning"><a href="{{route('admin_category_add')}}">Category Add</a> </button>
+                            <h2>Products Table </h2>
+                            <button type="button" class="btn btn-round btn-warning"><a href="{{route('admin_product_add')}}">Product Add</a> </button>
                             <ul class="nav navbar-right panel_toolbox">
                                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                 </li>
@@ -95,9 +95,12 @@
                                             <thead>
                                             <tr>
                                                 <th>İd</th>
-                                                <th>Parent</th>
+                                                <th>Category</th>
                                                 <th>Title</th>
+                                                <th>Keywords</th>
                                                 <th>Description</th>
+                                                <th>Image</th>
+                                                <th>Price</th>
                                                 <th>Status</th>
                                                 <th>Edit</th>
                                                 <th>Delete</th>
@@ -110,12 +113,15 @@
 
                                                 <tr>
                                                     <td>{{$rs->id}}</td>
-                                                    <td>{{$rs->parent_id}}</td>
+                                                    <td>{{$rs->category_id}}</td>
                                                     <td>{{$rs->title}}</td>
+                                                    <td>{{$rs->keywords}}</td>
                                                     <td>{{$rs->description}}</td>
+                                                    <td>{{$rs->image}}</td>
+                                                    <td>{{$rs->price}}</td>
                                                     <td>{{$rs->status}}</td>
-                                                    <td><a href="{{route('admin_category_edit',['id'=>$rs->id])}}" ><i style="font-size: large " class="fa fa-refresh w3-xxxlarge w3-spin"></i>Edit</a></td>
-                                                    <td><a href="{{route('admin_category_delete',['id'=>$rs->id])}}" onclick="return confirm('delete are you sure')"><i style="font-size: large" class="fa fa-trash w3-xxlarge"></i></a></td>
+                                                    <td><a href="{{route('admin_product_edit',['id'=>$rs->id])}}" ><i style="font-size: large" class="fa fa-refresh w3-xxxlarge w3-spin"></i>Edit</a></td>
+                                                    <td><a href="{{route('admin_product_delete',['id'=>$rs->id])}}" onclick="return confirm('delete are you sure')"><i style="font-size: large" class="fa fa-trash w3-xxlarge"></i></a></td>
                                                 </tr>
                                             @endforeach
                                             </tbody>

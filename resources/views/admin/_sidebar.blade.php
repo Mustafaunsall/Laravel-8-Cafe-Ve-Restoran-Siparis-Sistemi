@@ -14,10 +14,10 @@
         @auth
         <span>Welcome,</span>
         <h2><a href="#">{{ Auth::user()->name}}</a> </h2>
+        <a data-toggle="tooltip"  class="fa fa-power-off" style="font-size: large; background-color: #afd9ee;border-radius: 3px; " data-placement="top" title="Logout" href="{{ route('admin_logout') }}">
 
-        <a data-toggle="tooltip" data-placement="top" title="Logout" href="{{ route('admin_logout') }}">
-            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
         </a>
+
         @endauth
     </div>
 </div>
@@ -34,7 +34,7 @@
             </li>
             <li><a href="{{route('admin_category')}}"><i class="fa fa-desktop"></i> Category </a>
 
-            <li><a href="{{route('admin_category')}}"><i class="fa fa-shopping-cart"></i> Product </a>
+            <li><a href="{{route('admin_product')}}"><i class="fa fa-shopping-cart"></i> Product </a>
 
 
 
@@ -53,15 +53,7 @@
     <div class="menu_section">
         <h3>Live On</h3>
         <ul class="nav side-menu">
-            <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                    <li><a href="e_commerce.html">E-commerce</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="project_detail.html">Project Detail</a></li>
-                    <li><a href="contacts.html">Contacts</a></li>
-                    <li><a href="profile.html">Profile</a></li>
-                </ul>
-            </li>
+
             <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="page_403.html">403 Error</a></li>
@@ -72,23 +64,7 @@
                     <li><a href="pricing_tables.html">Pricing Tables</a></li>
                 </ul>
             </li>
-            <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                    <li><a href="#level1_1">Level One</a>
-                    <li><a>Level One<span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                            <li class="sub_menu"><a href="level2.html">Level Two</a>
-                            </li>
-                            <li><a href="#level2_1">Level Two</a>
-                            </li>
-                            <li><a href="#level2_2">Level Two</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#level1_2">Level One</a>
-                    </li>
-                </ul>
-            </li>
+
             <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
         </ul>
     </div>
