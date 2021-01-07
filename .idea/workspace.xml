@@ -3596,6 +3596,7 @@
       <workItem from="1610015233235" duration="22872000" />
       <workItem from="1610042593955" duration="477000" />
       <workItem from="1610044360527" duration="377000" />
+      <workItem from="1610044793078" duration="710000" />
     </task>
     <task id="LOCAL-00001" summary="humberger add">
       <created>1607284706580</created>
@@ -3657,7 +3658,8 @@
     <MESSAGE value="Project new template add.Admin login page and log out create.Admin category table ,add,edit,delete create" />
     <MESSAGE value="Product table create.Product add,edit and delete" />
     <MESSAGE value="Product image add and edit.&#10;Product details were added and updated with rich text ckeditor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Product image add and edit.&#10;Product details were added and updated with rich text ckeditor" />
+    <MESSAGE value="Product image add and update.Product detail adding and updating was done with rich text ckeditor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Product image add and update.Product detail adding and updating was done with rich text ckeditor" />
   </component>
   <component name="WindowStateProjectService">
     <state x="154" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609797152983">
