@@ -117,7 +117,13 @@
                                                     <td>{{$rs->title}}</td>
                                                     <td>{{$rs->keywords}}</td>
                                                     <td>{{$rs->description}}</td>
-                                                    <td>{{$rs->image}}</td>
+                                                    <td>
+                                                        @if($rs->image)
+                                                             <img src="{{Storage::url($rs->image)}}" height="40" alt="">
+
+                                                            @endif
+
+                                                    </td>
                                                     <td>{{$rs->price}}</td>
                                                     <td>{{$rs->status}}</td>
                                                     <td><a href="{{route('admin_product_edit',['id'=>$rs->id])}}" ><i style="font-size: large" class="fa fa-refresh w3-xxxlarge w3-spin"></i>Edit</a></td>

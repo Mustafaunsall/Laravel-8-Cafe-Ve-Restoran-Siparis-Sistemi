@@ -38,7 +38,7 @@
 
                                 <div class="x_content">
                                     <br>
-                                    <form action="{{route('admin_product_update',['id'=>$data->id])}}" method="post" class="form-horizontal form-label-left">
+                                    <form action="{{route('admin_product_update',['id'=>$data->id])}}" method="post" class="form-horizontal form-label-left" enctype="multipart/form-data">
                                           @csrf
                                         <div class="form-group row ">
                                             <label class="control-label col-md-3 col-sm-3 ">Title</label>
@@ -55,14 +55,26 @@
                                         <div class="form-group row ">
                                             <label class="control-label col-md-3 col-sm-3 ">Image</label>
                                             <div class="col-md-9 col-sm-9 ">
-                                                <input type="text" name="image" value="{{$data->image}}" class="form-control" >
+                                                <input type="file" name="image" value="{{ $data->image }}" class="form-control" >
+
+                                                @if($data->image)
+                                                    <img src="{{Storage::url($data->image)}}" height="100" alt="">
+
+                                                @endif
                                             </div>
                                         </div>
+
 
                                         <div class="form-group row ">
                                             <label class="control-label col-md-3 col-sm-3 ">Detail</label>
                                             <div class="col-md-9 col-sm-9 ">
-                                                <input type="detail" name="detail" value="{{$data->detail}}" class="form-control" >
+                                                <textarea   class="form-control" id="summary-ckeditor" name="detail" >{{ $data->detail }}</textarea>
+                                                <script src="{{ asset('assets/ckeditor/ckeditor.js') }}"></script>
+                                                <script src="{{ asset('assets/ckfinder/ckfinder.js') }}"></script> //image upload
+                                                <script>
+                                                    CKEDITOR.replace( 'summary-ckeditor' );
+                                                </script>
+
                                             </div>
                                         </div>
                                         <div class="form-group row ">

@@ -10,6 +10,7 @@
 
     <title> @yield('title') </title>
 
+
     <!-- Bootstrap -->
     <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link href="{{asset('assets')}}/admin/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -27,6 +28,7 @@
     <!-- bootstrap-daterangepicker -->
     <link href="{{asset('assets')}}/admin/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
+
     <!-- Datatables -->
 
     <link href="{{asset('assets')}}/admin/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
@@ -40,6 +42,7 @@
     <link href="{{asset('assets')}}/admin/build/css/custom.min.css" rel="stylesheet">
     @yield('css')
     @yield('javascript')
+
 </head>
 
 <body class="nav-md">
