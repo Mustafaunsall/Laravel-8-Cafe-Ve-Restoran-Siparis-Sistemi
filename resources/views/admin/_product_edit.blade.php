@@ -70,7 +70,7 @@
                                             <div class="col-md-9 col-sm-9 ">
                                                 <textarea   class="form-control" id="summary-ckeditor" name="detail" >{{ $data->detail }}</textarea>
                                                 <script src="{{ asset('assets/ckeditor/ckeditor.js') }}"></script>
-                                                <script src="{{ asset('assets/ckfinder/ckfinder.js') }}"></script> //image upload
+                                                <script src="{{ asset('assets/ckfinder/ckfinder.js') }}"></script> <!--image upload-->
                                                 <script>
                                                     CKEDITOR.replace( 'summary-ckeditor' );
                                                 </script>
