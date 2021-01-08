@@ -29,24 +29,17 @@
     <div class="menu_section">
         <h3>General</h3>
         <ul class="nav side-menu">
-            <li><a href="/admin"><i class="fa fa-home"></i> Home </a>
+            <li><a href="{{route('admin_home')}}"><i class="fa fa-home"></i> Home </a>
 
             </li>
-            <li><a href="{{route('admin_category')}}"><i class="fa fa-desktop"></i> Category </a>
+            <li><a href="{{route('admin_category')}}"><i class="fa fa-desktop"></i> Category </a></li>
 
             <li><a href="{{route('admin_product')}}"><i class="fa fa-shopping-cart"></i> Product </a>
 
-
-
+            </li>
+            <li><a href="{{route('admin_setting')}} "><i class="fa fa-cog"></i> Settings </a>
 
             </li>
-            <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                    <li><a href="tables.html">Tables</a></li>
-                    <li><a href="tables_dynamic.html">Table Dynamic</a></li>
-                </ul>
-            </li>
-
 
         </ul>
     </div>
@@ -71,5 +64,16 @@
 
 </div>
 <!-- /sidebar menu -->
+
+        <!-- /menu footer buttons -->
+        <div class="sidebar-footer hidden-small">
+            <a data-toggle="tooltip" data-placement="top" title="Settings" href="{{route('admin_setting')}}">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" data-placement="top" title="Logout" href="{{ route('admin_logout') }}">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+            </a>
+        </div>
+        <!-- /menu footer buttons -->
     </div>
 </div>

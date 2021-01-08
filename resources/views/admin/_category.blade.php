@@ -114,8 +114,8 @@
                                                     <td>{{$rs->title}}</td>
                                                     <td>{{$rs->description}}</td>
                                                     <td>{{$rs->status}}</td>
-                                                    <td><a href="{{route('admin_category_edit',['id'=>$rs->id])}}" ><i style="font-size: large " class="fa fa-refresh w3-xxxlarge w3-spin"></i>Edit</a></td>
-                                                    <td><a href="{{route('admin_category_delete',['id'=>$rs->id])}}" onclick="return confirm('delete are you sure')"><i style="font-size: large" class="fa fa-trash w3-xxlarge"></i></a></td>
+                                                    <td><a href="{{route('admin_category_edit',['id'=>$rs->id])}}" ><img style="height: 20px; width: 20px" src="{{ asset('assets/admin/images') }}/edit.png"></a></td>
+                                                    <td><a href="{{route('admin_category_delete',['id'=>$rs->id])}}" onclick="return confirm('delete are you sure')"><img style="height: 20px; width: 20px" src="{{ asset('assets/admin/images') }}/sil.png"></a></td>
                                                 </tr>
                                             @endforeach
                                             </tbody>

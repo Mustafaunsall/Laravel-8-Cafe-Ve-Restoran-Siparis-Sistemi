@@ -100,6 +100,7 @@
                                                 <th>Keywords</th>
                                                 <th>Description</th>
                                                 <th>Image</th>
+                                                <th>Image Gallery</th>
                                                 <th>Price</th>
                                                 <th>Status</th>
                                                 <th>Edit</th>
@@ -119,15 +120,14 @@
                                                     <td>{{$rs->description}}</td>
                                                     <td>
                                                         @if($rs->image)
-                                                             <img src="{{Storage::url($rs->image)}}" height="40" alt="">
-
-                                                            @endif
-
+                                                             <img src="{{Storage::url($rs->image)}}" height="50px" width="60px" alt="">
+                                                        @endif
                                                     </td>
+                                                    <td><a href="{{route('admin_image_add',['product_id'=>$rs->id])}}" onclick="return !window.open(this.href,'targetWindow','top=50 left=100 with=1100,height=700')"><img style="height: 35px; width: 35px" src="{{ asset('assets/admin/images') }}/gallery.png"></a> </td>
                                                     <td>{{$rs->price}}</td>
                                                     <td>{{$rs->status}}</td>
-                                                    <td><a href="{{route('admin_product_edit',['id'=>$rs->id])}}" ><i style="font-size: large" class="fa fa-refresh w3-xxxlarge w3-spin"></i>Edit</a></td>
-                                                    <td><a href="{{route('admin_product_delete',['id'=>$rs->id])}}" onclick="return confirm('delete are you sure')"><i style="font-size: large" class="fa fa-trash w3-xxlarge"></i></a></td>
+                                                    <td><a href="{{route('admin_product_edit',['id'=>$rs->id])}}" ><img style="height: 20px; width: 20px" src="{{ asset('assets/admin/images') }}/edit.png"></a></td>
+                                                    <td><a href="{{route('admin_product_delete',['id'=>$rs->id])}}" onclick="return confirm('delete are you sure')"><img style="height: 20px; width: 20px" src="{{ asset('assets/admin/images') }}/sil.png"></a></td>
                                                 </tr>
                                             @endforeach
                                             </tbody>
