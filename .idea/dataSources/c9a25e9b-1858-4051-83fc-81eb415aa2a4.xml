@@ -1488,7 +1488,7 @@ tokenable_id</ColNames>
       <Position>16</Position>
       <DataType>varchar(100)|0s</DataType>
     </column>
-    <column id="434" parent="344" name="aboutus">
+    <column id="434" parent="344" name="about">
       <Position>17</Position>
       <DataType>text|0s</DataType>
     </column>

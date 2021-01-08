@@ -114,7 +114,7 @@
 
                                                 <tr>
                                                     <td>{{$rs->id}}</td>
-                                                    <td>{{$rs->category_id}}</td>
+                                                    <td>{{$rs->category->title}}</td>
                                                     <td>{{$rs->title}}</td>
                                                     <td>{{$rs->keywords}}</td>
                                                     <td>{{$rs->description}}</td>

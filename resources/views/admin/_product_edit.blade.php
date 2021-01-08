@@ -93,9 +93,9 @@
                                             <label class="control-label col-md-3 col-sm-3 ">Category</label>
                                             <div class="col-md-9 col-sm-9 ">
                                                 <select  name="category_id" class="form-control">
-                                                    @foreach($list as $rs)
+                                                    @foreach($datalist as $rs)
 
-                                                        <option value="{{$rs->id}}" @if($rs->id == $data->category_id) selected="selected"  @endif >{{$rs->title}}</option>
+                                                        <option value="{{$rs->category->id}}" @if($rs->category->id == $data->category_id) selected="selected"  @endif >{{$rs->category->title}}</option>
 
                                                     @endforeach
                                                 </select>

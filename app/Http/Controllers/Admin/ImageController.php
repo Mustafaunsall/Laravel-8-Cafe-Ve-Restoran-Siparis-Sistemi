@@ -30,7 +30,8 @@ class ImageController extends Controller
     public function create($product_id)
     {
         $data = Product::find($product_id);
-        $images = DB::table('images')->where('product_id', '=', $product_id)->get();
+
+            $images = DB::table('images')->where('product_id', '=', $product_id)->get();
 
         return view('admin._image_add',['data' => $data,'images'=>$images]);
     }
@@ -47,9 +48,11 @@ class ImageController extends Controller
 
         $data->title = $request->input('title');
         $data->product_id = $product_id;
-        $data->image = Storage::putFile('images',$request->file('image'));
-        $data->save();
+        if ($request->file('image')!=null) {
+            $data->image = Storage::putFile('images', $request->file('image'));
 
+        $data->save();
+        }
         return redirect()->route('admin_image_add',['product_id'=>$product_id]);
     }
 

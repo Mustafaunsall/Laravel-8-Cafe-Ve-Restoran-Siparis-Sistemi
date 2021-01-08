@@ -19,49 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1549e5a0-c560-4d36-93a9-8ad7db103509" name="Default Changelist" comment="Admin Setting add and edit">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ImageController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SettingController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Image.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Setting.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_07_191502_create_images_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_07_192105_image.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_07_230654_create_settings_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_07_234158_setting.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/images/edit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/images/gallery.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/images/sil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckfinder/userfiles/.ckfinder/cache/data/Files/american-express.png.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckfinder/userfiles/.ckfinder/cache/data/Files/img(1).jpg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckfinder/userfiles/.ckfinder/cache/data/Files/img.jpg.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckfinder/userfiles/.ckfinder/cache/data/Files/inbox(1).png.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckfinder/userfiles/.ckfinder/cache/data/Files/inbox.png.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckfinder/userfiles/.ckfinder/cache/data/Files/user(1).png.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckfinder/userfiles/.ckfinder/cache/data/Files/user(2).png.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckfinder/userfiles/.ckfinder/cache/data/Files/user.png.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckfinder/userfiles/.ckfinder/cache/data/Files/visa.png.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckfinder/userfiles/files/american-express.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckfinder/userfiles/files/img(1).jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckfinder/userfiles/files/img.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckfinder/userfiles/files/inbox(1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckfinder/userfiles/files/inbox.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckfinder/userfiles/files/user(1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckfinder/userfiles/files/user(2).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckfinder/userfiles/files/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckfinder/userfiles/files/visa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/_image_add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/_setting_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/34ac138f-3560-4626-88eb-dc457c9cfe6e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/34ac138f-3560-4626-88eb-dc457c9cfe6e.xml" afterDir="false" />
+    <list default="true" id="1549e5a0-c560-4d36-93a9-8ad7db103509" name="Default Changelist" comment="Admin Setting add and edit.Product image gallery add">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/c9a25e9b-1858-4051-83fc-81eb415aa2a4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c9a25e9b-1858-4051-83fc-81eb415aa2a4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/gentelella-master/production/general_elements.html" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/gentelella-master/production/general_elements.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ImageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/ckfinder/core/connector/php/vendor/cksource/ckfinder" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/ckfinder/core/connector/php/vendor/cksource/ckfinder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/_category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_category.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/_product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/_product_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_product_add.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/_product_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_product_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +101,8 @@
       <workItem from="1610044360527" duration="377000" />
       <workItem from="1610044793078" duration="4896000" />
       <workItem from="1610050124720" duration="19471000" />
-      <workItem from="1610099605109" duration="12378000" />
+      <workItem from="1610099605109" duration="13870000" />
+      <workItem from="1610118600193" duration="9880000" />
     </task>
     <task id="LOCAL-00001" summary="humberger add">
       <created>1607284706580</created>
@@ -191,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610046203170</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Admin Setting add and edit">
+      <created>1610113166251</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1610113166251</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,6 +194,7 @@
     <MESSAGE value="Product image add and edit.&#10;Product details were added and updated with rich text ckeditor" />
     <MESSAGE value="Product image add and update.Product detail adding and updating was done with rich text ckeditor" />
     <MESSAGE value="Admin Setting add and edit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin Setting add and edit" />
+    <MESSAGE value="Admin Setting add and edit.Product image gallery add" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin Setting add and edit.Product image gallery add" />
   </component>
 </project>

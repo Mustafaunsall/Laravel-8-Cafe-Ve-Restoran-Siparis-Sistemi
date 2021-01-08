@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -52,7 +53,10 @@ class ProductController extends Controller
         $data->detail = $request->input('detail');
         $data->user_id =Auth::id();
         $data->price = $request->input('price');
-        $data->image = Storage::putFile('images',$request->file('image'));
+        if ($request->file('image')!=null) {
+
+            $data->image = Storage::putFile('images', $request->file('image'));
+        }
         $data->save();
 
         return redirect()->route('admin_product');
@@ -81,9 +85,8 @@ class ProductController extends Controller
     {
         $data = Product::find($id);
         $datalist = Product::all();
-        $list=Category::all();
 
-        return view('admin._product_edit',['data' => $data,'datalist' => $datalist,'list' => $list]);
+        return view('admin._product_edit',['data' => $data,'datalist' => $datalist]);
     }
 
     /**
@@ -106,8 +109,10 @@ class ProductController extends Controller
         $data->detail = $request->input('detail');
         $data->user_id =Auth::id();
         $data->price = $request->input('price');
-        $data->image = Storage::putFile('images',$request->file('image'));
+        if ($request->file('image')!=null) {
 
+            $data->image = Storage::putFile('images', $request->file('image'));
+        }
 
         $data->save();
 
