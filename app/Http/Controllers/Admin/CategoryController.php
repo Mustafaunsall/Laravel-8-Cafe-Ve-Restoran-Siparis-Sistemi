@@ -10,11 +10,20 @@ use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
+    protected $appends=['getParentsTree'];//her yerden erişebilmek için
 
 
+    //parentları bulma recursife fonk
+    public static function getParentsTree($category, $title){  //static fonksiyon olmazsa dışarıdan erişme olmuyor
+        if ($category->parent_id==0){
 
+            return $title;
+        }
+        $parent=Category::find($category->parent_id);//parente getiriyor
+        $title=$parent->title . ' > ' . $title; //parent>child şekilde değişkene atıyor
 
-
+        return  CategoryController::getParentsTree($parent, $title);
+    }
 
     /**
      * Display a listing of the resource.
@@ -26,7 +35,7 @@ class CategoryController extends Controller
         //
         //$datalist = DB::select('select *from categories'); //aynı veri çekiyor
 
-        $datalist = DB::table('categories')->get();
+        $datalist =Category::with('children')->get();
         return view('admin._category',['datalist' => $datalist]);
     }
 
@@ -37,7 +46,7 @@ class CategoryController extends Controller
      */
     public function add()
     {
-        $datalist = DB::table('categories')->get()->where('parent_id',0);
+        $datalist =Category::with('children')->get();
 
         return view('admin._category_add',['datalist' => $datalist]);
     }
@@ -94,7 +103,7 @@ class CategoryController extends Controller
     public function edit(Category $category,$id)
     {
         $data = Category::find($id);
-        $datalist = DB::table('categories')->get()->where('parent_id',0);
+        $datalist =Category::with('children')->get();
 
 
        return view('admin._category_edit',['data' => $data,'datalist' => $datalist]);
