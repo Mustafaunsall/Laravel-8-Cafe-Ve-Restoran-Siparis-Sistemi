@@ -1,3 +1,5 @@
+
+
 <!-- Navigation-->
 <nav class="navbar navbar-fixed-top">
     <div class="container">
@@ -8,16 +10,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="./index.html">
+            <a class="navbar-brand" href="{{route('home')}}">
                 <img src="{{asset('assets')}}/restaurant/img/nav-logo.png" alt="nav-logo">
             </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="./index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home<span class="caret"></span></a>
+                    <a href="{{route('home')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="./index.html">Home - Image</a></li>
+                        <li><a href="{{route('home')}}">Home - Image</a></li>
                         <li><a href="./index_slider.html">Home - Header Slider</a></li>
                         <li><a href="./index_video.html">Home - Video Background</a></li>
                         <li><a href="./index_parallax.html">Home - Parallax</a></li>
@@ -41,50 +43,18 @@
                         <li><a href="./reservation-ot.html">Reservation - Opentable</a></li>
                     </ul>
                 </li>
+                <!--
                 <li class="dropdown">
                     <a href="./about.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="./about.html">About</a></li>
-                        <li><a href="./gallery.html">Gallery</a></li>
-                        <li><a href="./elements.html">Shortcodes</a></li>
-                        <li><a href="./shop_account.html">Login / Signup</a></li>
-                        <li><a href="./404.html">404 Page</a></li>
+                        <li><a href="{{route('aboutus')}}">About Us</a></li>
+                        <li><a href="{{route('contact')}}">Contact</a></li>
+                        <li><a href="{{route('refrences')}}">Refrences</a></li>
+                        <li><a href="{{route('fag')}}">Faq</a></li>
+
                     </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="./recipe.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipe<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="./recipe.html">Recipe - 2Col</a></li>
-                        <li><a href="./recipe_3col.html">Recipe - 3Col</a></li>
-                        <li><a href="./recipe_4col.html">Recipe - 4Col</a></li>
-                        <li><a href="./recipe_masonry.html">Recipe - Masonry</a></li>
-                        <li>
-                            <a href="./recipe_detail-image.html">Recipe - Single <span class="caret-right"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="./recipe_detail-image.html">Recipe - Image</a></li>
-                                <li><a href="./recipe_detail-slider.html">Recipe - Gallery</a></li>
-                                <li><a href="./recipe_detail-video.html">Recipe - Video</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="./blog_right_sidebar.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="./blog_right_sidebar.html">Blog - Right Sidebar</a></li>
-                        <li><a href="./blog_left_sidebar.html">Blog - Left Sidebar</a></li>
-                        <li><a href="./blog_fullwidth.html">Blog - Fullwidth</a></li>
-                        <li><a href="./blog_masonry.html">Blog - Masonry</a></li>
-                        <li>
-                            <a href="./blog_single_image.html">Blog - Single <span class="caret-right"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="./blog_single_image.html">Blog - Image</a></li>
-                                <li><a href="./blog_single_slider.html">Blog - Gallery</a></li>
-                                <li><a href="./blog_single_video.html">Blog - Video</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+                </li>-->
+
                 <li class="dropdown">
                     <a href="./shop_fullwidth.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -105,7 +75,10 @@
                         <li><a href="./shop_account_detail.html">Shop - Account Detail</a></li>
                     </ul>
                 </li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="{{route('contact')}}">Contact</a></li>
+                <li><a href="{{route('aboutus')}}">About Us</a></li>
+                <li><a href="{{route('fag')}}">Faq</a></li>
+                <li><a href="{{route('refrences')}}">Refrences</a></li>
                 <li class="dropdown">
                     <a class="css-pointer dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-shopping-cart fsc pull-left"></i><span class="cart-number">3</span><span class="caret"></span></a>
                     <div class="cart-content dropdown-menu">
@@ -140,8 +113,44 @@
                             <span class="pull-left checkout-price">$ 114.95</span>
                             <a class="btn btn-default pull-right" href="./shop_cart.html">View Cart</a>
                         </div>
+
                     </div>
                 </li>
+
+                @auth
+                <li class="dropdown">
+                    <a class="css-pointer dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> {{ Auth::user()->name}}<span class="caret"></span></a>
+
+                    <div class="cart-content dropdown-menu">
+                        <div class="cart-title">
+                            <h4>{{ Auth::user()->name}}</h4>
+                        </div>
+                        <div  class="cart-items">
+
+                                <div class="cart-item-desc">
+                                    <h2><a class="dropdown-item"  href="{{ route('logout') }}"><i class="fa fa-user"></i> Profile</a></h2>
+                                </div>
+                                <div class="cart-item-desc">
+                                    <h2><a class="dropdown-item"  href="{{ route('logout') }}"> Log Out<i class="fa fa-sign-out pull-right"></i></a></h2>
+                                </div>
+                        </div>
+
+
+                    </div>
+                </li>
+
+                @endauth
+                @guest
+
+                    <li class="dropdown">
+                        <a href="{{route('login')}}"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i>Login<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{route('register')}}">Join</a></li>
+                        </ul>
+
+                    </li>
+                @endguest
+
             </ul>
         </div>
         <!--/.navbar-collapse -->

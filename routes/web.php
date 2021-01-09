@@ -18,14 +18,20 @@ Route::get('/home2', function () {    //eski user laravelin sayfası
     return view('welcome');
 });
 //Route::redirect('/anasayfa', '/home')->name('anasayfa'); //bir sayafadan diğer sayfaya direk yönlendirme
-Route::get('/', function () {   //sadece bir dosya çağıracaksak burdanda viewe çağırabiliriz
+/*Route::get('/', function () {   //sadece bir dosya çağıracaksak burdanda viewe çağırabiliriz
     return view('home.index');//viewe isim gönderebiliyoruz routedan   , ['name' => 'Mustafa Ünsal']
-});
-
-//Route::get('/home', [HomeController::class, 'index']); //controllerdaki fonsiyonu çalıştırıyor
-
+});*/
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+//Home
+    Route::get('/home', [HomeController::class, 'index'])->name('homepage');
+    Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
+    Route::get('/fag', [HomeController::class, 'fag'])->name('fag');
+    Route::get('/refrences', [HomeController::class, 'refrences'])->name('refrences');
+    Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 //Admin
 Route::middleware('auth')->prefix('admin')->group(function (){
+
+
 
     Route::get('/', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
 
@@ -71,7 +77,7 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 //Admin login
 Route::get('/admin/login', [HomeController::class, 'login'])->name('admin_login'); //controllerdaki fonsiyonu çalıştırıyor
 Route::post('/admin/logincheck', [HomeController::class, 'logincheck'])->name('admin_logincheck');
-Route::get('/admin/logout', [HomeController::class, 'logout'])->name('admin_logout');
+Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

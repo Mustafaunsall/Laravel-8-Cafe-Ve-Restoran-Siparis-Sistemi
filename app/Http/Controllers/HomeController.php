@@ -2,22 +2,46 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     //
+    public static function getSetting(){  //Her yerden çağırabiliyoruz
+
+        return Setting::first();
+
+
+    }
+
     public function index(){
 
-       return view('home.index'); //viewe yönlendiriyoruz
+        $setting=Setting::first(); //dizi halinde geirdiğimizde döngüye gerek yok
+       return view('home.index',['setting'=>$setting]);
 
     }
     public function login(){
 
         return view('admin.login'); //viewe yönlendiriyoruz
-
-
     }
+    public function aboutus(){
+
+        return view('home.about');
+    }
+    public function contact(){
+
+        return view('home.contact');
+    }
+    public function fag(){
+
+        return view('home.fag');
+    }
+    public function refrences(){
+
+        return view('home.refrences');
+    }
+
     public function logincheck(Request $request)
     {
         if ($request->isMethod('post'))

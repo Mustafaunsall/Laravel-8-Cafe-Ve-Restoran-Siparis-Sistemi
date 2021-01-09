@@ -14,7 +14,7 @@
         @auth
         <span>Welcome,</span>
         <h2><a href="#">{{ Auth::user()->name}}</a> </h2>
-        <a data-toggle="tooltip"  class="fa fa-power-off" style="font-size: large; background-color: #afd9ee;border-radius: 3px; " data-placement="top" title="Logout" href="{{ route('admin_logout') }}">
+        <a data-toggle="tooltip"  class="fa fa-power-off" style="font-size: large; background-color: #afd9ee;border-radius: 3px; " data-placement="top" title="Logout" href="{{ route('logout') }}">
 
         </a>
 
@@ -70,7 +70,7 @@
             <a data-toggle="tooltip" data-placement="top" title="Settings" href="{{route('admin_setting')}}">
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
             </a>
-            <a data-toggle="tooltip" data-placement="top" title="Logout" href="{{ route('admin_logout') }}">
+            <a data-toggle="tooltip" data-placement="top" title="Logout" href="{{ route('logout') }}">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
             </a>
         </div>
