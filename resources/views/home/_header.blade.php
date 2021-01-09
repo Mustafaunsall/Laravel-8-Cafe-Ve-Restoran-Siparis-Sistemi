@@ -128,7 +128,7 @@
                         <div  class="cart-items">
 
                                 <div class="cart-item-desc">
-                                    <h2><a class="dropdown-item"  href="{{ route('logout') }}"><i class="fa fa-user"></i> Profile</a></h2>
+                                    <h2><a class="dropdown-item"  href="{{ route('myprofile') }}"><i class="fa fa-user"></i> Profile</a></h2>
                                 </div>
                                 <div class="cart-item-desc">
                                     <h2><a class="dropdown-item"  href="{{ route('logout') }}"> Log Out<i class="fa fa-sign-out pull-right"></i></a></h2>

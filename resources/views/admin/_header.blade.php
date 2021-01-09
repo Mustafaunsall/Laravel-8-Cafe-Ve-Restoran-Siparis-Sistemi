@@ -21,7 +21,7 @@
                             <span>Settings</span>
                         </a>
                         <a class="dropdown-item"  href="javascript:;">Help</a>
-                        @auth()
+                        @auth
                         <a class="dropdown-item"  href="{{ route('logout') }}"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                         @endauth
                     </div>

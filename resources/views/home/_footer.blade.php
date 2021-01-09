@@ -1,4 +1,6 @@
-
+@php
+    $setting=\App\Http\Controllers\HomeController::getSetting()
+@endphp
 <!-- Footer-->
 <section class="footer">
     <div class="container">
