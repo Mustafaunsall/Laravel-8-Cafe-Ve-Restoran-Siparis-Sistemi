@@ -3,7 +3,7 @@
 @endphp
 @extends('layouts.home')
 
-@section('title','About Us-'.$setting->title)
+@section('title', $setting->title)
 @section('description'){{ $setting->description}}@endsection
 @section('keywords',$setting->keywords)
 @section('content')
@@ -28,7 +28,7 @@
             <div class="row">
 
 
-             {!! $setting->about !!}
+
 
             </div>
         </div>

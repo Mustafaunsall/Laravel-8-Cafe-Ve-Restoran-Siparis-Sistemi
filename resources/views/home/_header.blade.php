@@ -119,7 +119,7 @@
 
                 @auth
                 <li class="dropdown">
-                    <a class="css-pointer dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> {{ Auth::user()->name}}<span class="caret"></span></a>
+                    <a class="css-pointer dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="{{ route('myprofile') }}"><i class="fa fa-user"></i> {{ Auth::user()->name}}<span class="caret"></span></a>
 
                     <div class="cart-content dropdown-menu">
                         <div class="cart-title">

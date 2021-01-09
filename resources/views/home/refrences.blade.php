@@ -3,7 +3,7 @@
 @endphp
 @extends('layouts.home')
 
-@section('title','About Us-'.$setting->title)
+@section('title','Refrences-'.$setting->title)
 @section('description'){{ $setting->description}}@endsection
 @section('keywords',$setting->keywords)
 @section('content')
@@ -13,8 +13,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h2 class="text-uppercase wow fadeInDown">About us</h2>
-                    <p class="wow fadeInUp">Read our Story, How we started and about the Team</p>
+                    <h2 class="text-uppercase wow fadeInDown">Refrences</h2>
+                    <p class="wow fadeInUp">Read Refrences</p>
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
             <div class="row">
 
 
-             {!! $setting->about !!}
+             {!! $setting->references !!}
 
             </div>
         </div>

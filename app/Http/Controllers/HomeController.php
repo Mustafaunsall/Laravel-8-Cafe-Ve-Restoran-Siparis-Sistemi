@@ -22,8 +22,8 @@ class HomeController extends Controller
 
     }
     public function login(){
-
-        return view('admin.login'); //viewe yönlendiriyoruz
+        $setting=Setting::first();
+        return view('admin.login',['setting'=>$setting]); //viewe yönlendiriyoruz
     }
     public function aboutus(){
 
