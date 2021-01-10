@@ -16,12 +16,7 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="{{route('home')}}" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                       aria-haspopup="true" aria-expanded="false">Home<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{route('home')}}">Home-Page</a></li>
-
-                    </ul>
+                    <a href="{{route('home')}}"  role="button">Home<span ></span></a>
                 </li>
                 <li class="dropdown">
                     <a href="./menu_all.html" class="dropdown-toggle" data-toggle="dropdown"  role="button"

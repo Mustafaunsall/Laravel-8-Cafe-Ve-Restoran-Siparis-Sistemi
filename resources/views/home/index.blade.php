@@ -33,6 +33,7 @@
     </section>
 
     @include('home._slider')
+    <div class="clearfix"></div>
     <!-- daily-->
     <section class="menu menu2">
         <div class="container">
@@ -70,6 +71,8 @@
             </div>
         </div>
     </section>
+
+    <div class="clearfix"></div>
     <!--Picked -->
     <section class="subscribe">
         <div class="row">
@@ -93,7 +96,7 @@
                                     <h5>New Arrivals</h5>
                                     <ul class="recent-products">
                                         @foreach($last as $rs)
-                                            <a href="{{route('addtocart',['id'=>$rs->id])}}">
+                                            <a href="{{route('product',['id'=>$rs->id])}}">
                                                 <li>
                                                     <img src="{{Storage::url($rs->image)}}" style="border-radius: 50px"
                                                          alt=""/>
@@ -133,7 +136,7 @@
                                                                  alt=""/>
                                                         </div>
                                                         <h4>
-                                                            <a href="{{asset('assets')}}/restaurant//recipe_detail-image.html">{{$rs->title}}</a>
+                                                            <a href="{{route('product',['id'=>$rs->id])}}">{{$rs->title}}</a>
                                                         </h4>
                                                         <div class="rc-ratings">
                                                             <span class="fa fa-star active"></span>
@@ -167,14 +170,14 @@
         </div>
     </section>
 
-
+    <div class="clearfix"></div>
     <!-- daily of day-->
     <section class="menu menu2">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header wow fadeInDown">
-                        <h1>Daily<small>Daily Deals of Day.</small></h1>
+                        <h1>Best Sellers<small>Best Selling Products</small></h1>
                     </div>
                 </div>
             </div>
@@ -184,7 +187,7 @@
                     <div class="menu-item2 col-sm-4 col-xs-12 starter dinner desserts">
                         <div class="menu-info">
                             <img src="{{Storage::url($rs->image)}}" style="height: 200px; width: 350px;" class="img-responsive" alt=""/>
-                            <a href="./menu_all.html">
+                            <a href="{{route('product',['id'=>$rs->id])}}">
                                 <div class="menu2-overlay">
                                     <h4>{{$rs->title}}</h4>
                                     <p>{{$rs->description}}</p>
@@ -192,7 +195,7 @@
                                 </div>
                             </a>
                         </div>
-                        <a href="./menu_all.html" class="menu-more">+</a>
+                        <a href="{{route('addtocart',['id'=>$rs->id])}}" class="menu-more">+</a>
                     </div>
                     @endforeach
                 </div>

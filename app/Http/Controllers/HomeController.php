@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Message;
 use App\Models\Product;
 use App\Models\Setting;
@@ -51,9 +52,10 @@ class HomeController extends Controller
     }
     public function product($id){
          $data=Product::find($id);
+         $list=Image::where('product_id',$id)->get();
          //print_r($data->title);
          //exit();
-
+        return view('home.product_detail',['data'=>$data,'list'=>$list]);
     }
     public function addtocart($id){
         $data=Product::find($id);

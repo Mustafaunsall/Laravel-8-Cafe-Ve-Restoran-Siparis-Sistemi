@@ -32,7 +32,7 @@
                                     </div>
                                     <p>Ultrices In massa est, dignissim in libero ac, fringilla ornare mi.Ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. accumsan, habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
                                     <a class="btn btn-default" href="{{route('product',['id'=>$rs->id])}}" role="button">Order now detail</a>
-                                    <a class="btn btn-secondary" href="./index.html" role="button">{{$rs->price}}<i class="fa fa-turkish-lira"></i>-Add to cart</a>
+                                    <a class="btn btn-secondary" href="{{route('addtocart',['id'=>$rs->id])}}" role="button">{{$rs->price}}<i class="fa fa-turkish-lira"></i>-Add to cart</a>
                                 </div>
                             </li>
                             @endforeach
