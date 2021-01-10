@@ -32,6 +32,7 @@ Route::get('/home2', function () {    //eski user laravelin sayfası
     Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
     Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
     Route::get('/product/{id}', [HomeController::class, 'product'])->name('product');
+    Route::get('/addtocart/{id}', [HomeController::class, 'addtocart'])->name('addtocart');
 
 //Admin
 Route::middleware('auth')->prefix('admin')->group(function (){

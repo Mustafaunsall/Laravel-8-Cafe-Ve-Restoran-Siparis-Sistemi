@@ -21,10 +21,16 @@ class HomeController extends Controller
 
         $setting=Setting::first(); //dizi halinde geirdiğimizde döngüye gerek yok
         $slider=Product::select('title','image','price','description','id')->limit(4)->get();
-        //print_r($slider);
+        $daily=Product::select('title','image','price','description','id')->limit(4)->inRandomOrder()->get();
+        $last=Product::select('title','image','price','description','id')->limit(6)->orderByDesc('id')->get();
+        $picked=Product::select('title','image','price','description','id')->limit(6)->inRandomOrder()->get();
+        //print_r($daily);
         //exit();
         $data=['setting'=>$setting,
-               'slider'=>$slider];
+               'slider'=>$slider,
+                'daily'=>$daily,
+                'last'=>$last,
+                'picked'=>$picked];
        return view('home.index',$data);
 
     }
@@ -45,10 +51,17 @@ class HomeController extends Controller
     }
     public function product($id){
          $data=Product::find($id);
-         print_r($data->title);
-         exit();
+         //print_r($data->title);
+         //exit();
 
     }
+    public function addtocart($id){
+        $data=Product::find($id);
+        print_r($data);
+        exit();
+
+    }
+
 
 
 

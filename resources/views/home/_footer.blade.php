@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-4 col-sm-12">
                 <h1>About us</h1>
-                <p>Duis leo justo, condimentum at purus eu,Aenean sed dolor sem. Etiam massa libero, auctor vitae egestas et, accumsan quis nunc.Duis leo justo, condimentum at purus eu, posuere pretium tellus.</p>
+                <p>{!!Str::words($setting->about, '25')!!}</p>
                 <a href="{{route('aboutus')}}">Read more &rarr;</a>
             </div>
             <div class="col-md-4  col-sm-6">

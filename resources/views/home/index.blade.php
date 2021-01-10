@@ -1,4 +1,3 @@
-
 @extends('layouts.home')
 
 @section('title', $setting->title)
@@ -9,12 +8,12 @@
     <!-- Preloder-->
     <div class="preloder animated">
         <div class="scoket">
-            <img src="{{asset('assets')}}/restaurant/img/preloader.svg" alt="" />
+            <img src="{{asset('assets')}}/restaurant/img/preloader.svg" alt=""/>
         </div>
     </div>
 
     <!-- Home page-->
-    <section class="home" >
+    <section class="home">
         <div class="overlay"></div>
 
         <div class="tittle-block">
@@ -33,223 +32,175 @@
         </div>
     </section>
 
-   @include('home._slider')
-
-    <!-- About page-->
-    <section class="about" id="about">
+    @include('home._slider')
+    <!-- daily-->
+    <section class="menu menu2">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header wow fadeInDown">
-                        <h1>the restaurant<small>A little about us and a breif history of how we started.</small></h1>
+                        <h1>Daily</h1>
                     </div>
                 </div>
             </div>
-            <div class="row wow fadeInUp">
-                <div class="col-md-4">
-                    <div class="container-fluid">
+            <div class="food-menu wow fadeInUp">
+
+                <div class="row menu-items4">
+
+
+                    @foreach($daily as $rs)
+                        <div class="menu-item4 col-sm-3 col-xs-12 breakfast">
+                            <div class="menu-info">
+                                <a href="">
+                                    <img src="{{Storage::url($rs->image)}} " style="height: 150px; width: 500px;" class="img-responsive"
+                                         alt=""/>
+                                    <div class="menu4-overlay ">
+                                        <h4>{{$rs->title}}</h4>
+                                        <p><br>{{$rs->description}}</p>
+                                        <span class="price">{{$rs->price}} <i class="fa fa-turkish-lira"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <!--Picked -->
+    <section class="subscribe">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header wow fadeInDown">
+                    <h2>Picked For You</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+
+                <div class="shop-content">
+                    <div class="container">
+
                         <div class="row">
-                            <div class="col-xs-12 hidden-sm about-photo">
-                                <div class="image-thumb">
-                                    <img src="{{asset('assets')}}/restaurant/img/thumb1.png" data-mfp-src="img/fullImages/pic1.jpg" class="img-responsive" alt="logo">
+
+                            <aside class="col-md-3">
+
+                                <div class="side-widget">
+                                    <h5>New Arrivals</h5>
+                                    <ul class="recent-products">
+                                        @foreach($last as $rs)
+                                            <a href="{{route('addtocart',['id'=>$rs->id])}}">
+                                                <li>
+                                                    <img src="{{Storage::url($rs->image)}}" style="border-radius: 50px"
+                                                         alt=""/>
+                                                    <div class="rpp-info">
+                                                        <a href="{{route('addtocart',['id'=>$rs->id])}}"><i
+                                                                class="fa fa-shopping-cart"></i>{{$rs->title}}</a>
+                                                        <div class="rc-ratings">
+                                                            <span class="fa fa-star active"></span>
+                                                            <span class="fa fa-star active"></span>
+                                                            <span class="fa fa-star active"></span>
+                                                            <span class="fa fa-star"></span>
+                                                            <span class="fa fa-star"></span>
+                                                        </div>
+                                                        <span>{{$rs->price}} <i class="fa fa-turkish-lira"></i></span>
+                                                    </div>
+                                                </li>
+                                            </a>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </aside>
+
+                            <div class="shop-content">
+                                <div class="col-md-9">
+
+                                    <div class="shop-products">
+                                        <div class="row">
+
+                                            @foreach($picked as $rs)
+                                                <div class="col-md-4 col-sm-6">
+
+                                                    <div class="product-info">
+
+                                                        <div class="product-img">
+                                                            <img src="{{Storage::url($rs->image)}}"
+                                                                 style="height: 250px;width: 250px;border-radius: 50px;"
+                                                                 alt=""/>
+                                                        </div>
+                                                        <h4>
+                                                            <a href="{{asset('assets')}}/restaurant//recipe_detail-image.html">{{$rs->title}}</a>
+                                                        </h4>
+                                                        <div class="rc-ratings">
+                                                            <span class="fa fa-star active"></span>
+                                                            <span class="fa fa-star active"></span>
+                                                            <span class="fa fa-star active"></span>
+                                                            <span class="fa fa-star"></span>
+                                                            <span class="fa fa-star"></span>
+                                                        </div>
+                                                        <div class="product-price">{{$rs->price}} <i
+                                                                class="fa fa-turkish-lira"></i></div>
+                                                        <div class="shop-meta">
+                                                            <a href="{{route('addtocart',['id'=>$rs->id])}}"
+                                                               class="pull-left"><i
+                                                                    class="fa fa-shopping-cart"></i> Add to cart</a>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            @endforeach
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-6 about-photo hidden-xs">
-                                <img src="{{asset('assets')}}/restaurant/img/thumb2.png" data-mfp-src="img/fullImages/pic2.jpg" class="img-responsive" alt="logo">
-                            </div>
-                            <div class="col-sm-6 about-photo hidden-xs">
-                                <img src="{{asset('assets')}}/restaurant/img/thumb3.png" data-mfp-src="img/fullImages/pic3.jpg" class="img-responsive" alt="logo">
-                            </div>
-                        </div>
                     </div>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                        Cras ut viverra eros. Phasellus sollicitudin sapien id luctus tempor. Sed hend rerit inter dum sagittis. Donec nunc lacus, dapibus nec interdum eget, ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. In massa est, dignissim in libero ac, fringilla ornare mi. Etiam interdum ligula purus.
-                    </p>
-                    <br>
-                    <p>
-                        Ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. In massa est, dignissim in libero ac, fringilla ornare.
-                    </p>
-                    <img src="{{asset('assets')}}/restaurant/img/signature.png" alt="signature">
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="trusted">
-        <!-- Quotes section-->
-        <div class="trusted-quote">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-offset-1 col-md-10 wow fadeIn">
-                        <div class="trusted-slider">
-                            <ul class="slides">
-                                <li>
-                                    <img src="{{asset('assets')}}/restaurant/img/quote.png" alt="quote">
-                                    <p class="quote-body">The world’s a big, big stage for this notorious deli smack in the middle of the theatre district, infamously famous for its over-the-top corned beef and pastrami sandwiches, chopped liver, blintzes, celebrities, salami, smoked fish and New York’s finest cheesecake.</p>
-                                    <p class="quote-author">Anthony Reed, <span>New York</span></p>
-                                </li>
-                                <li>
-                                    <img src="{{asset('assets')}}/restaurant/img/quote.png" alt="quote">
-                                    <p class="quote-body">You might not find dragon meat on the menu, but you’ll find pretty much anything else that walks, swims or flies, cooked up in more ways than there are people in the Guangdong province. This Midtown mainstay has a 20-year history of delivering mouth-watering and Cantonese style chow.</p>
-                                    <p class="quote-author">Gemma Arterton, <span>Bay Area</span></p>
-                                </li>
-                                <li>
-                                    <img src="{{asset('assets')}}/restaurant/img/quote.png" alt="quote">
-                                    <p class="quote-body">This NYC historical landmark in the heart of the Theatre District has been serving up suds and down home pub food since 1892, surviving prohibition by renting the front of its then Rockefeller Center façade to Greek florists, while the Hurley brothers ran a speak-easy in back.</p>
-                                    <p class="quote-author">Zachary Burton, <span>Sanfransisco</span></p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-
-
-
-    <!-- Reservations page-->
-    <section class="reservation">
+    <!-- daily of day-->
+    <section class="menu menu2">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header wow fadeInDown">
-                        <h1>Reservations<small>Book a table online. Leads will reach in your email.</small></h1>
+                        <h1>Daily<small>Daily Deals of Day.</small></h1>
                     </div>
                 </div>
             </div>
-            <div class="reservation-form wow fadeInUp">
-                <form action="php/reservation.php" id="reservationform" method="POST">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-6">
-                            <div class="form-group">
-                                <label for="datepicker">Date</label>
-                                <input type="text" name="date" class="form-control" id="datepicker" placeholder="Pick a date" title="Please choose a date" required>
-                                <i class="fa fa-calendar-o"></i>
-                            </div>
+            <div class="food-menu wow fadeInUp">
+                <div class="row menu-items2">
+                    @foreach($picked as $rs)
+                    <div class="menu-item2 col-sm-4 col-xs-12 starter dinner desserts">
+                        <div class="menu-info">
+                            <img src="{{Storage::url($rs->image)}}" style="height: 200px; width: 350px;" class="img-responsive" alt=""/>
+                            <a href="./menu_all.html">
+                                <div class="menu2-overlay">
+                                    <h4>{{$rs->title}}</h4>
+                                    <p>{{$rs->description}}</p>
+                                    <span class="price">{{$rs->price}} <i class="fa fa-turkish-lira"></i></span>
+                                </div>
+                            </a>
                         </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="form-group">
-                                <label for="name">Your Name</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" title="Your Full Name please" required>
-                                <i class="fa fa-pencil-square-o"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="form-group">
-                                <label for="timepicker">Time</label>
-                                <input type="text" class="form-control" id="timepicker" name="time" placeholder="Pick a time" title="Choose Preferred Time" required>
-                                <i class="fa fa-clock-o"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email ID" title="Please enter your email id" required>
-                                <i class="fa fa-envelope-o"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="form-group">
-                                <label for="guests">Guests</label>
-                                <input class="form-control" type="number" id="guests" name="guests" placeholder="How many of you?" title="Please enter number of guests" required>
-                                <i class="fa fa-user"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your Phone Number" title="Please enter your phone number" required>
-                                <i class="fa fa-phone"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-sm-12">
-                            <div class="reservation-btn">
-                                <button type="submit" class="btn btn-default btn-lg" id="js-reservation-btn">Make Reservation</button>
-                                <div id="js-reservation-result" data-success-msg="Form submitted successfully." data-error-msg="Oops. Something went wrong."></div>
-                            </div>
-                        </div>
+                        <a href="./menu_all.html" class="menu-more">+</a>
                     </div>
-                </form>
-            </div>
-            <div class="reservation-footer">
-                <p>You can also call: <strong>+1 224 6787 004</strong> to make a reservation.</p>
-                <span></span>
+                    @endforeach
+                </div>
             </div>
         </div>
+
     </section>
 
-    <!-- Our features-->
-    <section class="features">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="page-header wow fadeInDown">
-                        <h1 class="white">Our features<small>Little things make us best in town</small></h1>
-                    </div>
-                </div>
-            </div>
-            <div class="row wow fadeInUp">
-                <div class="col-md-4 col-sm-6">
-                    <div class="features-tile">
-                        <div class="features-img">
-                            <img src="{{asset('assets')}}/restaurant/img/thumb5.png" alt="" />
-                        </div>
-                        <div class="features-content">
-                            <div class="page-header">
-                                <h1>Serving with love</h1>
-                            </div>
-                            <p>Aenean suscipit vehicula purus quis iaculis. Aliquam nec leo nisi. Nam urna arcu, maximus eget ex nec, consequat pellentesque enim. Aliquam tempor fringilla odio, vel ullamcorper turpis varius eu.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="features-tile">
-                        <div class="features-img">
-                            <img src="{{asset('assets')}}/restaurant/img/thumb6.png" alt="" />
-                        </div>
-                        <div class="features-content">
-                            <div class="page-header">
-                                <h1>Serving with love</h1>
-                            </div>
-                            <p>Aenean suscipit vehicula purus quis iaculis. Aliquam nec leo nisi. Nam urna arcu, maximus eget ex nec, consequat pellentesque enim. Aliquam tempor fringilla odio, vel ullamcorper turpis varius eu.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="features-tile">
-                        <div class="features-img">
-                            <img src="{{asset('assets')}}/restaurant/img/thumb7.png" alt="" />
-                        </div>
-                        <div class="features-content">
-                            <div class="page-header">
-                                <h1>Serving with love</h1>
-                            </div>
-                            <p>Aenean suscipit vehicula purus quis iaculis. Aliquam nec leo nisi. Nam urna arcu, maximus eget ex nec, consequat pellentesque enim. Aliquam tempor fringilla odio, vel ullamcorper turpis varius eu.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 visible-sm">
-                    <div class="features-tile">
-                        <div class="features-img">
-                            <img src="{{asset('assets')}}/restaurant/img/thumb5.png" alt="" />
-                        </div>
-                        <div class="features-content">
-                            <div class="page-header">
-                                <h1>Serving with love</h1>
-                            </div>
-                            <p>Aenean suscipit vehicula purus quis iaculis. Aliquam nec leo nisi. Nam urna arcu, maximus eget ex nec, consequat pellentesque enim. Aliquam tempor fringilla odio, vel ullamcorper turpis varius eu.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- menu-->
     <section class="menu">

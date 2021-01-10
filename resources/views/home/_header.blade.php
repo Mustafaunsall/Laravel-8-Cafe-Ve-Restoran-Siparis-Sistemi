@@ -1,10 +1,9 @@
-
-
 <!-- Navigation-->
 <nav class="navbar navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -17,17 +16,16 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="{{route('home')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home<span class="caret"></span></a>
+                    <a href="{{route('home')}}" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                       aria-haspopup="true" aria-expanded="false">Home<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{route('home')}}">Home - Image</a></li>
-                        <li><a href="./index_slider.html">Home - Header Slider</a></li>
-                        <li><a href="./index_video.html">Home - Video Background</a></li>
-                        <li><a href="./index_parallax.html">Home - Parallax</a></li>
-                        <li><a href="./index_animation.html">Home - Scroll Animation</a></li>
+                        <li><a href="{{route('home')}}">Home-Page</a></li>
+
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="./menu_all.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu<span class="caret"></span></a>
+                    <a href="./menu_all.html" class="dropdown-toggle" data-toggle="dropdown"  role="button"
+                       aria-haspopup="true" aria-expanded="false">Menu<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="./menu_list.html">Menu - List</a></li>
                         <li><a href="./menu_overlay.html">Menu - Overlay</a></li>
@@ -37,13 +35,14 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="./reservation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reservation<span class="caret"></span></a>
+                    <a href="./reservation.html" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                       aria-haspopup="true" aria-expanded="false">Reservation<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="./reservation.html">Reservation</a></li>
                         <li><a href="./reservation-ot.html">Reservation - Opentable</a></li>
                     </ul>
                 </li>
-                <!--
+            <!--
                 <li class="dropdown">
                     <a href="./about.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -56,7 +55,8 @@
                 </li>-->
 
                 <li class="dropdown">
-                    <a href="./shop_fullwidth.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop<span class="caret"></span></a>
+                    <a href="./shop_fullwidth.html" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                       aria-haspopup="true" aria-expanded="false">Shop<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="./shop_fullwidth.html">Shop - Full</a></li>
                         <li><a href="./shop_left_sidebar.html">Shop - Left Sidebar</a></li>
@@ -80,7 +80,9 @@
                 <li><a href="{{route('fag')}}">Faq</a></li>
                 <li><a href="{{route('refrences')}}">Refrences</a></li>
                 <li class="dropdown">
-                    <a class="css-pointer dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-shopping-cart fsc pull-left"></i><span class="cart-number">3</span><span class="caret"></span></a>
+                    <a class="css-pointer dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false"><i class="fa fa-shopping-cart fsc pull-left"></i><span class="cart-number">3</span><span
+                            class="caret"></span></a>
                     <div class="cart-content dropdown-menu">
                         <div class="cart-title">
                             <h4>Shopping Cart</h4>
@@ -88,7 +90,9 @@
                         <div class="cart-items">
                             <div class="cart-item clearfix">
                                 <div class="cart-item-image">
-                                    <a href="./shop_single_full.html"><img src="{{asset('assets')}}/restaurant/img/cart-img1.jpg" alt="Breakfast with coffee"></a>
+                                    <a href="./shop_single_full.html"><img
+                                            src="{{asset('assets')}}/restaurant/img/cart-img1.jpg"
+                                            alt="Breakfast with coffee"></a>
                                 </div>
                                 <div class="cart-item-desc">
                                     <a href="./shop_single_full.html">Breakfast with coffee</a>
@@ -99,7 +103,9 @@
                             </div>
                             <div class="cart-item clearfix">
                                 <div class="cart-item-image">
-                                    <a href="./shop_single_full.html"><img src="{{asset('assets')}}/restaurant/img/cart-img2.jpg" alt="Chicken stew"></a>
+                                    <a href="./shop_single_full.html"><img
+                                            src="{{asset('assets')}}/restaurant/img/cart-img2.jpg"
+                                            alt="Chicken stew"></a>
                                 </div>
                                 <div class="cart-item-desc">
                                     <a href="./shop_single_full.html">Chicken stew</a>
@@ -118,32 +124,41 @@
                 </li>
 
                 @auth
-                <li class="dropdown">
-                    <a class="css-pointer dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="{{ route('myprofile') }}"><i class="fa fa-user"></i> {{ Auth::user()->name}}<span class="caret"></span></a>
+                    <li class="dropdown">
+                        <a class="css-pointer dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false" href="{{ route('myprofile') }}"><i
+                                class="fa fa-user"></i> {{ Auth::user()->name}}<span class="caret"></span></a>
 
-                    <div class="cart-content dropdown-menu">
-                        <div class="cart-title">
-                            <h4>{{ Auth::user()->name}}</h4>
-                        </div>
-                        <div  class="cart-items">
-
-                                <div class="cart-item-desc">
-                                    <h2><a class="dropdown-item"  href="{{ route('myprofile') }}"><i class="fa fa-user"></i> Profile</a></h2>
+                        <div class="cart-content dropdown-menu">
+                            <div class="cart-title">
+                                <h4>{{ Auth::user()->name}}</h4>
+                            </div>
+                            <div class="cart-items">
+                                <div class="cart-item clearfix">
+                                    <div class="cart-item-desc">
+                                        <h4><a class="dropdown-item" href="{{ route('myprofile') }}"><i
+                                                    class="fa fa-user"></i> Profile</a></h4>
+                                    </div>
                                 </div>
-                                <div class="cart-item-desc">
-                                    <h2><a class="dropdown-item"  href="{{ route('logout') }}"> Log Out<i class="fa fa-sign-out pull-right"></i></a></h2>
+                                <div class="cart-item clearfix">
+                                    <div class="cart-item-desc">
+                                        <h4><a class="dropdown-item" href="{{ route('logout') }}"> Log Out<i
+                                                    class="fa fa-sign-out pull-right"></i></a></h4>
+                                    </div>
                                 </div>
+                            </div>
+
+
                         </div>
-
-
-                    </div>
-                </li>
+                    </li>
 
                 @endauth
                 @guest
 
                     <li class="dropdown">
-                        <a href="{{route('login')}}"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i>Login<span class="caret"></span></a>
+                        <a href="{{route('login')}}" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i>Login<span
+                                class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{route('register')}}">Join</a></li>
                         </ul>
