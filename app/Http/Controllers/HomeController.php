@@ -20,7 +20,7 @@ class HomeController extends Controller
     public function index(){
 
         $setting=Setting::first(); //dizi halinde geirdiğimizde döngüye gerek yok
-        $slider=Product::select('title','image','price')->limit(4)->get();
+        $slider=Product::select('title','image','price','description','id')->limit(4)->get();
         //print_r($slider);
         //exit();
         $data=['setting'=>$setting,
@@ -28,18 +28,31 @@ class HomeController extends Controller
        return view('home.index',$data);
 
     }
+    //login
     public function login(){
         $setting=Setting::first();
         return view('admin.login',['setting'=>$setting]); //viewe yönlendiriyoruz
     }
+
     public function aboutus(){
 
         return view('home.about');
     }
+
     public function contact(){
 
         return view('home.contact');
     }
+    public function product($id){
+         $data=Product::find($id);
+         print_r($data->title);
+         exit();
+
+    }
+
+
+
+    //contact message kaydetme
     public function sendmessage(Request $request){
 
         $data=new Message();

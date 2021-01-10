@@ -14,7 +14,7 @@
     </div>
 
     <!-- Home page-->
-    <section class="home">
+    <section class="home" >
         <div class="overlay"></div>
 
         <div class="tittle-block">
@@ -27,48 +27,13 @@
             <h2>Tomato is a delicious restaurant </h2>
         </div>
         <div class="scroll-down hidden-xs">
-            <a href="#about">
+            <a href="#special">
                 <img src="{{asset('assets')}}/restaurant/img/arrow-down.png" alt="down-arrow">
             </a>
         </div>
     </section>
 
-    <div class="trusted">
-        <!-- Quotes section-->
-        <div class="trusted-quote">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-offset-1 col-md-10 wow fadeIn">
-                        <div class="trusted-slider">
-                            <ul class="slides">
-                                <li>
-                                    <img src="{{asset('assets')}}/restaurant/img/quote.png" alt="quote">
-                                    <p class="quote-body">The world’s a big, big stage for this notorious deli smack in the middle of the theatre district, infamously famous for its over-the-top corned beef and pastrami sandwiches, chopped liver, blintzes, celebrities, salami, smoked fish and New York’s finest cheesecake.</p>
-                                    <p class="quote-author">Anthony Reed, <span>New York</span></p>
-                                </li>
-                                <li>
-                                    <img src="{{asset('assets')}}/restaurant/img/quote.png" alt="quote">
-                                    <p class="quote-body">You might not find dragon meat on the menu, but you’ll find pretty much anything else that walks, swims or flies, cooked up in more ways than there are people in the Guangdong province. This Midtown mainstay has a 20-year history of delivering mouth-watering and Cantonese style chow.</p>
-                                    <p class="quote-author">Gemma Arterton, <span>Bay Area</span></p>
-                                </li>
-                                <li>
-                                    <img src="{{asset('assets')}}/restaurant/img/quote.png" alt="quote">
-                                    <p class="quote-body">This NYC historical landmark in the heart of the Theatre District has been serving up suds and down home pub food since 1892, surviving prohibition by renting the front of its then Rockefeller Center façade to Greek florists, while the Hurley brothers ran a speak-easy in back.</p>
-                                    <p class="quote-author">Zachary Burton, <span>Sanfransisco</span></p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
+   @include('home._slider')
 
     <!-- About page-->
     <section class="about" id="about">
@@ -114,73 +79,39 @@
         </div>
     </section>
 
-    <!-- Today's special page-->
-    <section class="special">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="page-header wow fadeInDown">
-                        <h1 class="white">today's specials<small>A little about us and a breif history of how we started.</small></h1>
-                    </div>
-                </div>
-            </div>
-            <div class="row wow fadeInUp">
-                <div class="col-md-offset-1 col-md-10">
-                    <div class="flexslider special-slider">
-                        <ul class="slides">
-                            <li>
-                                <div class="slider-img">
-                                    <img src="{{asset('assets')}}/restaurant/img/thumb4.png" alt="" />
-                                </div>
-                                <div class="slider-content">
-                                    <div class="page-header">
-                                        <h1>Pancake with Caramel<small>If you are a fan of caramel cake, then you'll love our Pancake with caramel icecream. It's not thick, but very tasty.</small></h1>
-                                    </div>
-                                    <p>Ultrices In massa est, dignissim in libero ac, fringilla ornare mi.Ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. accumsan, habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                                    <a class="btn btn-default" href="./index.html" role="button">Order now</a>
-                                    <a class="btn btn-secondary" href="./index.html" role="button">Add to cart</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="slider-img">
-                                    <img src="{{asset('assets')}}/restaurant/img/thumb4.png" alt="" />
-                                </div>
-                                <div class="slider-content">
-                                    <div class="page-header">
-                                        <h1>Pancake with Caramel<small>If you are a fan of caramel cake, then you'll love our Pancake with caramel icecream. It's not thick, but very tasty.</small></h1>
-                                    </div>
-                                    <p>Ultrices In massa est, dignissim in libero ac, fringilla ornare mi.Ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. accumsan, habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                                    <a class="btn btn-default" href="./index.html" role="button">Order now</a>
-                                    <a class="btn btn-secondary" href="./index.html" role="button">Add to cart</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="slider-img">
-                                    <img src="{{asset('assets')}}/restaurant/img/thumb4.png" alt="" />
-                                </div>
-                                <div class="slider-content">
-                                    <div class="page-header">
-                                        <h1>Pancake with Caramel<small>If you are a fan of caramel cake, then you'll love our Pancake with caramel icecream. It's not thick, but very tasty.</small></h1>
-                                    </div>
-                                    <p>Ultrices In massa est, dignissim in libero ac, fringilla ornare mi.Ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. accumsan, habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                                    <a class="btn btn-default" href="./index.html" role="button">Order now</a>
-                                    <a class="btn btn-secondary" href="./index.html" role="button">Add to cart</a>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="direction-nav hidden-sm">
-                            <div class="next">
-                                <a><img src="{{asset('assets')}}/restaurant/img/right-arrow.png" alt="" /></a>
-                            </div>
-                            <div class="prev">
-                                <a><img src="{{asset('assets')}}/restaurant/img/left-arrow.png" alt="" /></a>
-                            </div>
+    <div class="trusted">
+        <!-- Quotes section-->
+        <div class="trusted-quote">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-offset-1 col-md-10 wow fadeIn">
+                        <div class="trusted-slider">
+                            <ul class="slides">
+                                <li>
+                                    <img src="{{asset('assets')}}/restaurant/img/quote.png" alt="quote">
+                                    <p class="quote-body">The world’s a big, big stage for this notorious deli smack in the middle of the theatre district, infamously famous for its over-the-top corned beef and pastrami sandwiches, chopped liver, blintzes, celebrities, salami, smoked fish and New York’s finest cheesecake.</p>
+                                    <p class="quote-author">Anthony Reed, <span>New York</span></p>
+                                </li>
+                                <li>
+                                    <img src="{{asset('assets')}}/restaurant/img/quote.png" alt="quote">
+                                    <p class="quote-body">You might not find dragon meat on the menu, but you’ll find pretty much anything else that walks, swims or flies, cooked up in more ways than there are people in the Guangdong province. This Midtown mainstay has a 20-year history of delivering mouth-watering and Cantonese style chow.</p>
+                                    <p class="quote-author">Gemma Arterton, <span>Bay Area</span></p>
+                                </li>
+                                <li>
+                                    <img src="{{asset('assets')}}/restaurant/img/quote.png" alt="quote">
+                                    <p class="quote-body">This NYC historical landmark in the heart of the Theatre District has been serving up suds and down home pub food since 1892, surviving prohibition by renting the front of its then Rockefeller Center façade to Greek florists, while the Hurley brothers ran a speak-easy in back.</p>
+                                    <p class="quote-author">Zachary Burton, <span>Sanfransisco</span></p>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+
+
 
     <!-- Reservations page-->
     <section class="reservation">

@@ -31,7 +31,7 @@ Route::get('/home2', function () {    //eski user laravelin sayfası
     Route::get('/refrences', [HomeController::class, 'refrences'])->name('refrences');
     Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
     Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
-
+    Route::get('/product/{id}', [HomeController::class, 'product'])->name('product');
 
 //Admin
 Route::middleware('auth')->prefix('admin')->group(function (){
