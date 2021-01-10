@@ -37,6 +37,9 @@
             <li><a href="{{route('admin_product')}}"><i class="fa fa-shopping-cart"></i> Product </a>
 
             </li>
+            <li><a href="{{route('admin_message')}} "><i class="fa fa-envelope"></i>Contact Message </a>
+
+            </li>
             <li><a href="{{route('admin_setting')}} "><i class="fa fa-cog"></i> Settings </a>
 
             </li>

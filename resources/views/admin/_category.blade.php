@@ -70,6 +70,7 @@
                     <div class="x_panel">
                         <div class="x_title">
                             <h2>Category Table </h2>
+                            @include('home.message')
                             <button type="button" class="btn btn-round btn-warning"><a href="{{route('admin_category_add')}}">Category Add</a> </button>
                             <ul class="nav navbar-right panel_toolbox">
                                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>

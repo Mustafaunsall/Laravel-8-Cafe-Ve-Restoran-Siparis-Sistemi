@@ -59,7 +59,7 @@ class ProductController extends Controller
         }
         $data->save();
 
-        return redirect()->route('admin_product');
+        return redirect()->route('admin_product')->with('success','kayıt eklendi');;
 
 
     }
@@ -116,7 +116,7 @@ class ProductController extends Controller
 
         $data->save();
 
-        return redirect()->route('admin_product');
+        return redirect()->route('admin_product')->with('success','kayıt düzenlendi');;
     }
 
     /**
@@ -130,7 +130,7 @@ class ProductController extends Controller
         //DB::table('categories')->where('id', '=', $id)->delete();
         $data = Product::find($id);
         $data->delete();
-        return redirect()->route('admin_product');
+        return redirect()->route('admin_product')->with('success','kayıt silindi');
     }
 
 

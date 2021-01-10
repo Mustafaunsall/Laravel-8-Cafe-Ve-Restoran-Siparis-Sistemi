@@ -42,13 +42,18 @@
 
                 <!-- form-->
                 <div class="col-md-6">
-                    <h3 class="text-left no-margin-top">İletişim Formu</h3>
-                    <form class="contact-form" id="contactForm" action="php/contact.php" method="post">
+                    <h3 class="text-left no-margin-top">İletişim Formu </h3>
+                    @include('home.message')
+                    <form class="contact-form" id="contactForm" action="{{route('sendmessage')}}" method="post">
+                        @csrf
                         <div class="form-group">
                             <input class="form-control" name="name" id="name" placeholder="Full Name" type="text" required="required" />
                         </div>
                         <div class="form-group">
                             <input class="form-control" type="email" name="email" id="email" placeholder="Email Address" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="phone" id="phone" placeholder="Phone Number" required="required" />
                         </div>
                         <div class="form-group">
                             <input class="form-control" placeholder="Subject" type="text" id="subject" name="subject">

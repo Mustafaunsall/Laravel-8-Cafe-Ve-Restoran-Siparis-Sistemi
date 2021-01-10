@@ -71,6 +71,7 @@
                         <div class="x_title">
                             <h2>Products Table </h2>
                             <button type="button" class="btn btn-round btn-warning"><a href="{{route('admin_product_add')}}">Product Add</a> </button>
+                            @include('home.message')
                             <ul class="nav navbar-right panel_toolbox">
                                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                 </li>

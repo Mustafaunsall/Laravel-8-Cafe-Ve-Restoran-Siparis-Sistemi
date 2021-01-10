@@ -69,7 +69,7 @@ class CategoryController extends Controller
 
 
         ]);
-        return redirect()->route('admin_category');
+        return redirect()->route('admin_category')->with('success','Veri Eklendi');
     }
 
     /**
@@ -127,7 +127,7 @@ class CategoryController extends Controller
             $data->status = $request->input('status');
 
         $data->save();
-        return redirect()->route('admin_category');
+        return redirect()->route('admin_category')->with('success','Veri Düzenlendi');
     }
 
     /**
@@ -139,7 +139,7 @@ class CategoryController extends Controller
     public function destroy(Category $category,$id)
     {
         DB::table('categories')->where('id', '=', $id)->delete();
-        return redirect()->route('admin_category');
+        return redirect()->route('admin_category')->with('success','Kayıt Silindi');
 
     }
 }
