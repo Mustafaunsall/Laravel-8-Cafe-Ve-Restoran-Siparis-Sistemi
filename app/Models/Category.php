@@ -9,7 +9,7 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $appends=['parent'];//her yerden erişebilmek için
+    protected $appends=['parent',];//her yerden erişebilmek için
 
 
     //one to many

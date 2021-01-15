@@ -52,9 +52,12 @@
                     @foreach($daily as $rs)
                         <div class="menu-item4 col-sm-3 col-xs-12 breakfast">
                             <div class="menu-info">
-                                <a href="">
-                                    <img src="{{Storage::url($rs->image)}} " style="height: 150px; width: 500px;" class="img-responsive"
+                                <a href="{{route('product',['id'=>$rs->id])}}">
+                                    <div style="  position: relative;text-align: center;color: white;">
+                                  <img src="{{Storage::url($rs->image)}} " style="height: 150px; width: 500px;" class="img-responsive"
                                          alt=""/>
+                                        <div style=" position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);color: red"><h3><i class="fa fa-search-plus"></i></h3></div>
+                                    </div>
                                     <div class="menu4-overlay ">
                                         <h4>{{$rs->title}}</h4>
                                         <p><br>{{$rs->description}}</p>
@@ -177,13 +180,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header wow fadeInDown">
-                        <h1>Best Sellers<small>Best Selling Products</small></h1>
+                        <h1>Our Special<small>Best Selling Products</small></h1>
                     </div>
                 </div>
             </div>
             <div class="food-menu wow fadeInUp">
                 <div class="row menu-items2">
-                    @foreach($picked as $rs)
+                    @foreach($last as $rs)
                     <div class="menu-item2 col-sm-4 col-xs-12 starter dinner desserts">
                         <div class="menu-info">
                             <img src="{{Storage::url($rs->image)}}" style="height: 200px; width: 350px;" class="img-responsive" alt=""/>

@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
-    protected $appends=['getParentsTree'];//her yerden erişebilmek için
+    protected $appends=[
+        'getParentsTree'
+    ];//her yerden erişebilmek için
 
 
     //parentları bulma recursife fonk

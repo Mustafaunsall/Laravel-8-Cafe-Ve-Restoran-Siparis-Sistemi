@@ -2,26 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Image;
 use App\Models\Message;
 use App\Models\Product;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Psy\Util\Str;
+
 class HomeController extends Controller
 {
-    //
+    public static function categorylist(){  //Her yerden çağırabiliyoruz
+
+        return Category::where('parent_id','=',0)->with('children')->get();
+    }
     public static function getSetting(){  //Her yerden çağırabiliyoruz
 
         return Setting::first();
-
-
     }
 
     public function index(){
 
         $setting=Setting::first(); //dizi halinde geirdiğimizde döngüye gerek yok
-        $slider=Product::select('title','image','price','description','id')->limit(4)->get();
+        $slider=Product::select('title','image','price','description','id','detail')->limit(6)->get();
         $daily=Product::select('title','image','price','description','id')->limit(4)->inRandomOrder()->get();
         $last=Product::select('title','image','price','description','id')->limit(6)->orderByDesc('id')->get();
         $picked=Product::select('title','image','price','description','id')->limit(6)->inRandomOrder()->get();
@@ -31,7 +36,8 @@ class HomeController extends Controller
                'slider'=>$slider,
                 'daily'=>$daily,
                 'last'=>$last,
-                'picked'=>$picked];
+                'picked'=>$picked,
+                 ];
        return view('home.index',$data);
 
     }
@@ -57,6 +63,19 @@ class HomeController extends Controller
          //exit();
         return view('home.product_detail',['data'=>$data,'list'=>$list]);
     }
+    //category list
+    public function categoryproducts($id){
+        $datalist=Product::where('category_id',$id)->get();
+        $data=Category::find($id);
+        $list=Category::where('parent_id','=',0)->with('children')->get();
+
+        //print_r($data);
+       // exit();
+        return view('home.category_products',['datalist'=>$datalist,'data'=>$data,'list'=>$list]);
+    }
+
+
+
     public function addtocart($id){
         $data=Product::find($id);
         print_r($data);
@@ -64,6 +83,28 @@ class HomeController extends Controller
 
     }
 
+    //search
+    public function getproduct(Request $request){
+
+        $search=$request->input('search');
+
+        $count=Product::where('title','like','%'.$search.'%')->get()->count();
+        if ($count==1) {
+
+            $data = Product::where('title','like','%'.$search.'%')->first();
+            return redirect()->route('product', ['id' => $data->id]);
+        }
+        else{
+            return redirect()->route('productlist', ['search' => $search]);
+
+        }
+    }
+    public function productlist($search){
+        $datalist = Product::where('title','like','%'.$search.'%')->get();
+        $list=Category::where('parent_id','=',0)->with('children')->get();
+        return view('home.search_products',['search'=>$search,'datalist'=>$datalist,'list'=>$list]);
+
+    }
 
 
 

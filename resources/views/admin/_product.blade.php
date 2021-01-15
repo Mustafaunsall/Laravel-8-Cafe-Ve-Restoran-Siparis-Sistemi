@@ -115,7 +115,7 @@
 
                                                 <tr>
                                                     <td>{{$rs->id}}</td>
-                                                    <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category,$rs->category->title) . ' > '. $rs->title}}</td>
+                                                    <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category,$rs->category->title)}}</td>
                                                     <td>{{$rs->title}}</td>
                                                     <td>{{$rs->keywords}}</td>
                                                     <td>{{$rs->description}}</td>
