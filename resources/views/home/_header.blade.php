@@ -13,7 +13,8 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="{{route('home')}}">
-                        <img src="{{asset('assets')}}/restaurant/img/nav-logo.png" style="width: 100px;height: 25px" alt="nav-logo">
+                        <img src="{{asset('assets')}}/restaurant/img/nav-logo.png" style="width: 100px;height: 25px"
+                             alt="nav-logo">
                     </a>
                 </div>
 
@@ -37,7 +38,8 @@
                                         <li><a href="./shop_single_full.html">Shop - Full</a></li>
                                         <li><a href="./shop_single_left.html">Shop - Left Sidebar</a></li>
                                         <li>
-                                            <a href="./shop_single_right.html">Shop - Right Sidebar<span class="caret-right"></span></a>
+                                            <a href="./shop_single_right.html">Shop - Right Sidebar<span
+                                                    class="caret-right"></span></a>
                                             <ul class="dropdown-menu">
                                                 <li><a href="./recipe_detail-image.html">Recipe - Image</a></li>
                                                 <li><a href="./recipe_detail-slider.html">Recipe - Gallery</a></li>
@@ -53,7 +55,7 @@
                         <li class="dropdown">
                             <a href="./shop_fullwidth.html" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true" aria-expanded="false">Category<span class="caret"></span></a>
-                               @include('home._category')
+                            @include('home._category')
                         </li>
 
 
@@ -122,7 +124,13 @@
                                         <div class="cart-item clearfix">
                                             <div class="cart-item-desc">
                                                 <h4><a class="dropdown-item" href="{{ route('myprofile') }}"><i
-                                                            class="fa fa-user"></i> Profile</a></h4>
+                                                            class="fa fa-user"></i>My Account</a></h4>
+                                            </div>
+                                        </div>
+                                        <div class="cart-item clearfix">
+                                            <div class="cart-item-desc">
+                                                <h4><a class="dropdown-item" href="{{ route('myreviews') }}"><i
+                                                            class="fa fa-heart-o"></i>My Reviews</a></h4>
                                             </div>
                                         </div>
                                         <div class="cart-item clearfix">
@@ -172,7 +180,9 @@
 
                                 <button type="submit"><i class="fa fa-search"></i></button>
                             </form>
-                            @livewireScripts
+                            @section('footerjs') <!--diğer yerlerde bu scripte ihtiyaç var bunu  kullanmak için-->
+                                @livewireScripts
+                            @endsection
                         </div>
                     </li>
                 </ul>

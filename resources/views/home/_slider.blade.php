@@ -20,10 +20,17 @@
                                 @php
                                   $i+=1;
                                 @endphp
+
+                                @php
+                                    $countreview=\App\Http\Controllers\HomeController::countreview($rs->id);
+                                    $avrgrev=\App\Http\Controllers\HomeController::avrgreview($rs->id);
+                                @endphp
                             <li>
                                 <div class="slider-img" @if($i==1)active @endif>
                                     <img src="{{Storage::url($rs->image)}}" style="width: 360px;height: 300px;" alt="" />
-                                    <h1>{{$rs->price}}<i class="fa fa-turkish-lira"></i></h1>
+                                    <h1>{{$rs->price}}<i class="fa fa-turkish-lira"></i>
+                                        <small >({{$countreview}}) Reviews </small>
+                                    </h1>
                                 </div>
                                 <div class="slider-content">
                                     <div class="page-header">

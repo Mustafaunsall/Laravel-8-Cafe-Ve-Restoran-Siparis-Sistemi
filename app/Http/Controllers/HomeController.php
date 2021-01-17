@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Image;
 use App\Models\Message;
 use App\Models\Product;
+use App\Models\Review;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,6 +15,17 @@ use Psy\Util\Str;
 
 class HomeController extends Controller
 {
+    public static function countreview($id){  //Her yerden çağırabiliyoruz
+
+        return Review::where('product_id',$id)->count();
+    }
+    public static function avrgreview($id){  //Her yerden çağırabiliyoruz
+
+        return Review::where('product_id',$id)->average('rate');
+    }
+
+
+
     public static function categorylist(){  //Her yerden çağırabiliyoruz
 
         return Category::where('parent_id','=',0)->with('children')->get();
@@ -59,9 +71,10 @@ class HomeController extends Controller
     public function product($id){
          $data=Product::find($id);
          $list=Image::where('product_id',$id)->get();
+        $reviews=Review::where('product_id',$id)->get();
          //print_r($data->title);
          //exit();
-        return view('home.product_detail',['data'=>$data,'list'=>$list]);
+        return view('home.product_detail',['data'=>$data,'list'=>$list,'reviews'=>$reviews]);
     }
     //category list
     public function categoryproducts($id){

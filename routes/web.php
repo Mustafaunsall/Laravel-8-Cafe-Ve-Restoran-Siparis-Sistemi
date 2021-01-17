@@ -87,6 +87,15 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::get('delete/{id}/{product_id}', [\App\Http\Controllers\Admin\ImageController::class, 'destroy'])->name('admin_image_delete');
 
     });
+    //Review
+    Route::prefix('review')->group(function (){
+
+        Route::get('/', [\App\Http\Controllers\Admin\ReviewController::class, 'index'])->name('admin_review');
+        Route::post('update/{id}', [\App\Http\Controllers\Admin\ReviewController::class, 'update'])->name('admin_review_update');
+        Route::get('show/{id}', [\App\Http\Controllers\Admin\ReviewController::class, 'show'])->name('admin_review_show');
+        Route::get('delete/{id}', [\App\Http\Controllers\Admin\ReviewController::class, 'destroy'])->name('admin_review_delete');
+
+    });
     //settings
     Route::get('setting', [\App\Http\Controllers\Admin\SettingController::class, 'index'])->name('admin_setting');
     Route::post('setting/update', [\App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin_setting_update');
@@ -97,6 +106,8 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function (){
 
     Route::get('/', [UserController::class, 'index'])->name('myprofile');
+    Route::get('/myreviews', [UserController::class, 'myreviews'])->name('myreviews');
+    Route::get('/deletereviews/{id}', [UserController::class, 'destroyreview'])->name('user_reviews_delete');
 
 });
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function (){

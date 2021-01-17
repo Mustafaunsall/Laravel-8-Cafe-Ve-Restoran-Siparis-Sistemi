@@ -50,6 +50,10 @@
 
 
                     @foreach($daily as $rs)
+                        @php
+                            $countreview=\App\Http\Controllers\HomeController::countreview($rs->id);
+                            $avrgrev=\App\Http\Controllers\HomeController::avrgreview($rs->id);
+                        @endphp
                         <div class="menu-item4 col-sm-3 col-xs-12 breakfast">
                             <div class="menu-info">
                                 <a href="{{route('product',['id'=>$rs->id])}}">
@@ -59,7 +63,7 @@
                                         <div style=" position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);color: red"><h3><i class="fa fa-search-plus"></i></h3></div>
                                     </div>
                                     <div class="menu4-overlay ">
-                                        <h4>{{$rs->title}}</h4>
+                                        <h4>{{$rs->title}}<small >({{$countreview}}) Reviews </small></h4>
                                         <p><br>{{$rs->description}}</p>
                                         <span class="price">{{$rs->price}} <i class="fa fa-turkish-lira"></i></span>
                                     </div>
@@ -85,6 +89,7 @@
                 </div>
             </div>
         </div>
+
         <div class="container">
             <div class="row">
 
@@ -99,13 +104,15 @@
                                     <h5>New Arrivals</h5>
                                     <ul class="recent-products">
                                         @foreach($last as $rs)
+
                                             <a href="{{route('product',['id'=>$rs->id])}}">
                                                 <li>
                                                     <img src="{{Storage::url($rs->image)}}" style="border-radius: 50px"
                                                          alt=""/>
                                                     <div class="rpp-info">
                                                         <a href="{{route('addtocart',['id'=>$rs->id])}}"><i
-                                                                class="fa fa-shopping-cart"></i>{{$rs->title}}</a>
+                                                                class="fa fa-shopping-cart"></i>{{$rs->title}}
+                                                        </a>
                                                         <div class="rc-ratings">
                                                             <span class="fa fa-star active"></span>
                                                             <span class="fa fa-star active"></span>
@@ -129,6 +136,10 @@
                                         <div class="row">
 
                                             @foreach($picked as $rs)
+                                                @php
+                                                    $countreview=\App\Http\Controllers\HomeController::countreview($rs->id);
+                                                    $avrgrev=\App\Http\Controllers\HomeController::avrgreview($rs->id);
+                                                @endphp
                                                 <div class="col-md-4 col-sm-6">
 
                                                     <div class="product-info">
@@ -139,7 +150,9 @@
                                                                  alt=""/>
                                                         </div>
                                                         <h4>
-                                                            <a href="{{route('product',['id'=>$rs->id])}}">{{$rs->title}}</a>
+                                                            <a href="{{route('product',['id'=>$rs->id])}}">{{$rs->title}}
+                                                                <small >({{$countreview}}) Reviews </small>
+                                                            </a>
                                                         </h4>
                                                         <div class="rc-ratings">
                                                             <span class="fa fa-star active"></span>
@@ -147,6 +160,7 @@
                                                             <span class="fa fa-star active"></span>
                                                             <span class="fa fa-star"></span>
                                                             <span class="fa fa-star"></span>
+                                                            ({{$avrgrev}})
                                                         </div>
                                                         <div class="product-price">{{$rs->price}} <i
                                                                 class="fa fa-turkish-lira"></i></div>

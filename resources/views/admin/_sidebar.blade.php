@@ -29,19 +29,22 @@
     <div class="menu_section">
         <h3>General</h3>
         <ul class="nav side-menu">
-            <li><a href="{{route('admin_home')}}"><i class="fa fa-home"></i> Home </a>
-
+            <li>
+                <a href="{{route('admin_home')}}"><i class="fa fa-home"></i> Home </a>
             </li>
-            <li><a href="{{route('admin_category')}}"><i class="fa fa-desktop"></i> Category </a></li>
-
-            <li><a href="{{route('admin_product')}}"><i class="fa fa-shopping-cart"></i> Product </a>
-
+            <li>
+                <a href="{{route('admin_category')}}"><i class="fa fa-desktop"></i> Category </a></li>
+            <li>
+                <a href="{{route('admin_product')}}"><i class="fa fa-shopping-cart"></i> Product </a>
             </li>
-            <li><a href="{{route('admin_message')}} "><i class="fa fa-envelope"></i>Contact Message </a>
-
+            <li>
+                <a href="{{route('admin_message')}} "><i class="fa fa-envelope"></i>Contact Message </a>
             </li>
-            <li><a href="{{route('admin_setting')}} "><i class="fa fa-cog"></i> Settings </a>
-
+            <li>
+                <a href="{{route('admin_review')}} "><i class="fa fa-star-half-empty"></i>Reviews </a>
+            </li>
+            <li>
+                <a href="{{route('admin_setting')}} "><i class="fa fa-cog"></i> Settings </a>
             </li>
 
         </ul>
