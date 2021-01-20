@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Faq;
 use App\Models\Image;
 use App\Models\Message;
 use App\Models\Product;
@@ -141,8 +142,8 @@ class HomeController extends Controller
 
     }
     public function fag(){
-
-        return view('home.fag');
+        $datalist=Faq::all()->sortBy('position');
+        return view('home.fag',['datalist'=>$datalist]);
     }
     public function refrences(){
 

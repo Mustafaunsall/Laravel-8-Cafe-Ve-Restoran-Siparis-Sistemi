@@ -44,6 +44,9 @@
                 <a href="{{route('admin_review')}} "><i class="fa fa-star-half-empty"></i>Reviews </a>
             </li>
             <li>
+                <a href="{{route('admin_faq')}} "><i class="fa fa-question-circle"></i>FAQ </a>
+            </li>
+            <li>
                 <a href="{{route('admin_setting')}} "><i class="fa fa-cog"></i> Settings </a>
             </li>
 

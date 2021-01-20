@@ -57,15 +57,23 @@
                         <div class="menu-item4 col-sm-3 col-xs-12 breakfast">
                             <div class="menu-info">
                                 <a href="{{route('product',['id'=>$rs->id])}}">
-                                    <div style="  position: relative;text-align: center;color: white;">
-                                  <img src="{{Storage::url($rs->image)}} " style="height: 150px; width: 500px;" class="img-responsive"
-                                         alt=""/>
-                                        <div style=" position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);color: red"><h3><i class="fa fa-search-plus"></i></h3></div>
+                                    <div class="gallery-item" data-mfp-src="{{Storage::url($rs->image)}}">
+                                        <img src="{{Storage::url($rs->image)}} " style="height: 150px; width: 500px;"
+                                             class="img-responsive"
+                                             alt=""/>
+                                        <div class="gi-overlay">
+                                            <i class="fa fa-search"></i>
+                                        </div>
                                     </div>
+
                                     <div class="menu4-overlay ">
-                                        <h4>{{$rs->title}}<small >({{$countreview}}) Reviews </small></h4>
+                                        <h4>{{$rs->title}}<small>({{$countreview}}) Reviews </small></h4>
                                         <p><br>{{$rs->description}}</p>
                                         <span class="price">{{$rs->price}} <i class="fa fa-turkish-lira"></i></span>
+                                        <div style="  position: relative;text-align: center;color: #ffffff;">
+
+                                            <a class="btn btn-default" style="border-radius: 60%" href="{{route('product',['id'=>$rs->id])}}" role="button"><i class="fa fa-search-plus">Detail</i></a>
+                                        </div>
                                     </div>
                                 </a>
                             </div>
@@ -151,7 +159,7 @@
                                                         </div>
                                                         <h4>
                                                             <a href="{{route('product',['id'=>$rs->id])}}">{{$rs->title}}
-                                                                <small >({{$countreview}}) Reviews </small>
+                                                                <small>({{$countreview}}) Reviews </small>
                                                             </a>
                                                         </h4>
                                                         <div class="rc-ratings">
@@ -201,19 +209,20 @@
             <div class="food-menu wow fadeInUp">
                 <div class="row menu-items2">
                     @foreach($last as $rs)
-                    <div class="menu-item2 col-sm-4 col-xs-12 starter dinner desserts">
-                        <div class="menu-info">
-                            <img src="{{Storage::url($rs->image)}}" style="height: 200px; width: 350px;" class="img-responsive" alt=""/>
-                            <a href="{{route('product',['id'=>$rs->id])}}">
-                                <div class="menu2-overlay">
-                                    <h4>{{$rs->title}}</h4>
-                                    <p>{{$rs->description}}</p>
-                                    <span class="price">{{$rs->price}} <i class="fa fa-turkish-lira"></i></span>
-                                </div>
-                            </a>
+                        <div class="menu-item2 col-sm-4 col-xs-12 starter dinner desserts">
+                            <div class="menu-info">
+                                <img src="{{Storage::url($rs->image)}}" style="height: 200px; width: 350px;"
+                                     class="img-responsive" alt=""/>
+                                <a href="{{route('product',['id'=>$rs->id])}}">
+                                    <div class="menu2-overlay">
+                                        <h4>{{$rs->title}}</h4>
+                                        <p>{{$rs->description}}</p>
+                                        <span class="price">{{$rs->price}} <i class="fa fa-turkish-lira"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <a href="{{route('addtocart',['id'=>$rs->id])}}" class="menu-more">+</a>
                         </div>
-                        <a href="{{route('addtocart',['id'=>$rs->id])}}" class="menu-more">+</a>
-                    </div>
                     @endforeach
                 </div>
             </div>
