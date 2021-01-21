@@ -39,7 +39,7 @@
                                     </div>
                                     <p>{!!$rs->detail!!}</p>
                                     <a class="btn btn-default" href="{{route('product',['id'=>$rs->id])}}" role="button">Order now detail</a>
-                                    <a class="btn btn-secondary" href="{{route('addtocart',['id'=>$rs->id])}}" role="button">{{$rs->price}}<i class="fa fa-turkish-lira"></i>-Add to cart</a>
+                                    <a class="btn btn-secondary" href="{{route('user_shopcart_add',['id'=>$rs->id])}}" role="button">{{$rs->price}}<i class="fa fa-turkish-lira"></i>-Add to cart</a>
                                 </div>
                             </li>
                             @endforeach

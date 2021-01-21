@@ -73,14 +73,27 @@
                                             <span class="fa fa-star"></span>
                                             <span class="fa fa-star"></span>
                                         </div>
-                                        <div class="product-price">{{$rs->price}} <i
-                                                class="fa fa-turkish-lira"></i></div>
+                                        <div class="product-price">{{$rs->price}} <i class="fa fa-turkish-lira"></i></div>
                                         <div class="shop-meta">
-                                            <a href="{{route('addtocart',['id'=>$rs->id])}}"
-                                               class="pull-left"><i
-                                                    class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <div class="pull-left">
+                                                <form
+                                                    action="{{route('user_shopcart_add',['id'=>$rs->id])}}"
+                                                    method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="quantity" value="1">
+
+                                                    <button type="submit">
+                                                        <i class="fa fa-shopping-cart"></i>Add to cart
+                                                    </button>
+
+                                                </form>
+                                            </div>
+                                            <div class="pull-right">
+                                                <button><i class="fa fa-heart-o"></i> Wishlist</button>
+                                            </div>
 
                                         </div>
+
 
                                     </div>
 

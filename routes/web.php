@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ShopcartController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,7 +35,6 @@ Route::get('/home2', function () {    //eski user laravelin sayfası
     Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
     Route::get('/product/{id}', [HomeController::class, 'product'])->name('product');
     Route::get('/categoryproducts/{id}', [HomeController::class, 'categoryproducts'])->name('categoryproducts');
-    Route::get('/addtocart/{id}', [HomeController::class, 'addtocart'])->name('addtocart');
 
     //search
     Route::post('/getproduct', [HomeController::class, 'getproduct'])->name('getproduct');
@@ -127,6 +127,17 @@ Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(fu
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function (){
 
     Route::get('/profile', [UserController::class, 'index'])->name('userprofile');
+
+    //Shopcart
+    Route::prefix('shopcart')->group(function (){
+
+        Route::get('/', [ShopcartController::class, 'index'])->name('user_shopcart');
+        Route::post('store/{id}', [ShopcartController::class, 'store'])->name('user_shopcart_add');
+        Route::post('update/{id}', [ShopcartController::class, 'update'])->name('user_shopcart_update');
+        Route::get('delete/{id}', [ShopcartController::class, 'destroy'])->name('user_shopcart_delete');
+
+    });
+
 
 });
 

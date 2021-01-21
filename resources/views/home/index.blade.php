@@ -72,7 +72,9 @@
                                         <span class="price">{{$rs->price}} <i class="fa fa-turkish-lira"></i></span>
                                         <div style="  position: relative;text-align: center;color: #ffffff;">
 
-                                            <a class="btn btn-default" style="border-radius: 60%" href="{{route('product',['id'=>$rs->id])}}" role="button"><i class="fa fa-search-plus">Detail</i></a>
+                                            <a class="btn btn-default" style="border-radius: 60%"
+                                               href="{{route('product',['id'=>$rs->id])}}" role="button"><i
+                                                    class="fa fa-search-plus">Detail</i></a>
                                         </div>
                                     </div>
                                 </a>
@@ -118,9 +120,14 @@
                                                     <img src="{{Storage::url($rs->image)}}" style="border-radius: 50px"
                                                          alt=""/>
                                                     <div class="rpp-info">
-                                                        <a href="{{route('addtocart',['id'=>$rs->id])}}"><i
-                                                                class="fa fa-shopping-cart"></i>{{$rs->title}}
-                                                        </a>
+                                                        <form action="{{route('user_shopcart_add',['id'=>$rs->id])}}"
+                                                              method="post">
+                                                            @csrf
+                                                            <input type="hidden" name="quantity" value="1">
+                                                            <button type="submit">
+                                                                <i class="fa fa-shopping-cart"></i>{{$rs->title}}
+                                                            </button>
+                                                        </form>
                                                         <div class="rc-ratings">
                                                             <span class="fa fa-star active"></span>
                                                             <span class="fa fa-star active"></span>
@@ -173,9 +180,20 @@
                                                         <div class="product-price">{{$rs->price}} <i
                                                                 class="fa fa-turkish-lira"></i></div>
                                                         <div class="shop-meta">
-                                                            <a href="{{route('addtocart',['id'=>$rs->id])}}"
-                                                               class="pull-left"><i
-                                                                    class="fa fa-shopping-cart"></i> Add to cart</a>
+                                                            <div class="pull-left">
+                                                                <form action="{{route('user_shopcart_add',['id'=>$rs->id])}}" method="post">
+                                                                    @csrf
+                                                                    <input type="hidden" name="quantity" value="1">
+
+                                                                    <button type="submit">
+                                                                        <i class="fa fa-shopping-cart"></i>Add to cart
+                                                                    </button>
+
+                                                                </form>
+                                                            </div>
+                                                            <div class="pull-right">
+                                                                <button><i class="fa fa-heart-o"></i> Wishlist</button>
+                                                            </div>
 
                                                         </div>
 
@@ -221,7 +239,13 @@
                                     </div>
                                 </a>
                             </div>
-                            <a href="{{route('addtocart',['id'=>$rs->id])}}" class="menu-more">+</a>
+                            <form action="{{route('user_shopcart_add',['id'=>$rs->id])}}" method="post">
+                                @csrf
+                                <input type="hidden" name="quantity" value="1">
+
+                                <button type="submit" class="menu-more">+</button>
+                            </form>
+
                         </div>
                     @endforeach
                 </div>

@@ -70,7 +70,8 @@
                 <div class="col-md-6 shop-single-info">
                     <div class="shop-single-title">
                         <h3 class="text-left">{{$data->title}} </h3>
-                        <a href="#mini-two"><small class="text-left">({{$countreview}}) Reviews <br> avgrate({{$avrgrev}})</small></a>
+                        <a href="#mini-two"><small class="text-left">({{$countreview}}) Reviews <br>
+                                avgrate({{$avrgrev}})</small></a>
                     </div>
                     <div class="shop-single-price">
                         <div class="ssp pull-left">{{$data->price}} <i class="fa fa-turkish-lira"></i> <span>{{$data->price*1.2}} <i
@@ -85,12 +86,15 @@
                         </div>
                     </div>
                     <p>{{$data->description}}.</p>
-                    <div class="quantity">
-                        <input type="number" placeholder="1">
-                        <a href="./shop_checkout.html" class="btn btn-success left-space-sm pull-right">Buy Now</a>
-                        <a href="{{route('addtocart',['id'=>$data->id])}}" class="btn btn-default pull-right">Add to
-                            Cart</a>
-                    </div>
+                    <form action="{{route('user_shopcart_add',['id'=>$data->id])}}" method="post">
+                        @csrf
+                        <div class="quantity">
+                            <input type="number" name="quantity" value="1" max="5">QTY
+                            <a href="./shop_checkout.html" class="btn btn-success left-space-sm pull-right">Buy Now</a>
+                            <button type="submit"  class="btn btn-default pull-right">Add to
+                                Cart</button>
+                        </div>
+                    </form>
                 </div>
             </div>
 

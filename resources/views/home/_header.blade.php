@@ -66,44 +66,57 @@
                         <li class="dropdown">
                             <a class="css-pointer dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true"
-                               aria-expanded="false"><i class="fa fa-shopping-cart fsc pull-left"></i><span
-                                    class="cart-number">3</span><span
+                               aria-expanded="false" href="{{route('user_shopcart')}}"><i
+                                    class="fa fa-shopping-cart fsc pull-left"></i><span
+                                    class="cart-number">{{\App\Http\Controllers\ShopcartController::countshopcart()}}</span><span
                                     class="caret"></span></a>
                             <div class="cart-content dropdown-menu">
                                 <div class="cart-title">
                                     <h4>Shopping Cart</h4>
                                 </div>
-                                <div class="cart-items">
-                                    <div class="cart-item clearfix">
-                                        <div class="cart-item-image">
-                                            <a href="./shop_single_full.html"><img
-                                                    src="{{asset('assets')}}/restaurant/img/cart-img1.jpg"
-                                                    alt="Breakfast with coffee"></a>
+
+                                @php
+                                    $data=\App\Http\Controllers\ShopcartController::shopcart();
+                                @endphp
+                                @foreach($data as $rs)
+                                    <div class="cart-items">
+                                        <div class="cart-item clearfix">
+                                            <div class="cart-item-image">
+                                                <a href="{{route('product',['id'=>$rs->product->id])}}"><img
+                                                        src="{{Storage::url($rs->product->image)}}"
+                                                        alt="Breakfast with coffee" height="30" width="30"></a>
+                                            </div>
+
+                                            <div class="cart-item-desc">
+                                                <a href="{{route('product',['id'=>$rs->product->id])}}">{{$rs->product->title}}</a>
+                                                <span class="cart-item-price"><i class="fa fa-turkish-lira"></i>{{$rs->product->price}}</span>
+                                                <span class="cart-item-quantity">x{{$rs->quantity}}</span>
+                                                <a href="{{route('user_shopcart_delete',['id'=>$rs->id])}}"
+                                                   onclick="return confirm('delete are you sure')">
+                                                    <i class="fa fa-times ci-close"></i>
+                                                </a>
+                                            </div>
+
                                         </div>
-                                        <div class="cart-item-desc">
-                                            <a href="./shop_single_full.html">Breakfast with coffee</a>
-                                            <span class="cart-item-price">$19.99</span>
-                                            <span class="cart-item-quantity">x 2</span>
-                                            <i class="fa fa-times ci-close"></i>
-                                        </div>
+
                                     </div>
-                                    <div class="cart-item clearfix">
-                                        <div class="cart-item-image">
-                                            <a href="./shop_single_full.html"><img
-                                                    src="{{asset('assets')}}/restaurant/img/cart-img2.jpg"
-                                                    alt="Chicken stew"></a>
-                                        </div>
-                                        <div class="cart-item-desc">
-                                            <a href="./shop_single_full.html">Chicken stew</a>
-                                            <span class="cart-item-price">$24.99</span>
-                                            <span class="cart-item-quantity">x 3</span>
-                                            <i class="fa fa-times ci-close"></i>
-                                        </div>
-                                    </div>
-                                </div>
+
+
+                                @endforeach
+
+                                @php
+                                    $data=\App\Http\Controllers\ShopcartController::shopcart();
+
+                                     $total=0;
+                                    foreach ($data as $rs){
+
+                                       $total=$total+($rs->quantity)*($rs->product->price);
+                                    }
+                                @endphp
                                 <div class="cart-action clearfix">
-                                    <span class="pull-left checkout-price">$ 114.95</span>
-                                    <a class="btn btn-default pull-right" href="./shop_cart.html">View Cart</a>
+                                    <span class="pull-left checkout-price">{{$total}}<i class="fa fa-turkish-lira"></i></span>
+                                    <a class="btn btn-default pull-right" href="{{route('user_shopcart')}}">View
+                                        Cart</a>
                                 </div>
 
                             </div>
@@ -161,6 +174,7 @@
                             </li>
                         @endguest
 
+
                     </ul>
                 </div>
                 <!--/.search kısmı -->
@@ -180,8 +194,8 @@
 
                                 <button type="submit"><i class="fa fa-search"></i></button>
                             </form>
-                            @section('footerjs') <!--diğer yerlerde bu scripte ihtiyaç var bunu  kullanmak için-->
-                                @livewireScripts
+                        @section('footerjs') <!--diğer yerlerde bu scripte ihtiyaç var bunu  kullanmak için-->
+                            @livewireScripts
                             @endsection
                         </div>
                     </li>
