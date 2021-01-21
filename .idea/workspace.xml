@@ -19,26 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1549e5a0-c560-4d36-93a9-8ad7db103509" name="Default Changelist" comment="Accordion Menu Sıkça Sorulan Sorular">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ShopcartController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Shopcart.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_20_212528_create_shopcarts_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_20_213008_shopcart.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/user_shopcart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c9a25e9b-1858-4051-83fc-81eb415aa2a4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c9a25e9b-1858-4051-83fc-81eb415aa2a4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+    <list default="true" id="1549e5a0-c560-4d36-93a9-8ad7db103509" name="Default Changelist" comment=" Shop Cart Alışveriş Sepeti">
       <change beforePath="$PROJECT_DIR$/public/assets/ckfinder/core/connector/php/vendor/cksource/ckfinder" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/ckfinder/core/connector/php/vendor/cksource/ckfinder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/restaurant/img/xtra/product-bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/_slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_slider.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/_switcher-js.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_switcher-js.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/category_products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/category_products.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/product_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/product_detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/usermenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/usermenu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +114,7 @@
       <workItem from="1610793938911" duration="9508000" />
       <workItem from="1610808616785" duration="27972000" />
       <workItem from="1611135749716" duration="41591000" />
-      <workItem from="1611227956062" duration="8359000" />
+      <workItem from="1611227956062" duration="9012000" />
     </task>
     <task id="LOCAL-00001" summary="humberger add">
       <created>1607284706580</created>
@@ -281,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611167036534</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary=" Shop Cart Alışveriş Sepeti">
+      <created>1611240849328</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1611240849328</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +310,7 @@
     <MESSAGE value="Category Product Ürünlerini Listeleme. Search Products with Jetstream livewire Autocomplete." />
     <MESSAGE value=" Reviews with Jetstream Livewire and Manage at User and Admin Panel" />
     <MESSAGE value="Accordion Menu Sıkça Sorulan Sorular" />
-    <option name="LAST_COMMIT_MESSAGE" value="Accordion Menu Sıkça Sorulan Sorular" />
+    <MESSAGE value=" Shop Cart Alışveriş Sepeti" />
+    <option name="LAST_COMMIT_MESSAGE" value=" Shop Cart Alışveriş Sepeti" />
   </component>
 </project>
