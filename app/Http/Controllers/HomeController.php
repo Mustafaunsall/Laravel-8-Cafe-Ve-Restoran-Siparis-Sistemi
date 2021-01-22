@@ -24,6 +24,10 @@ class HomeController extends Controller
 
         return Review::where('product_id',$id)->average('rate');
     }
+    public static function footerlastproduct(){  //Her yerden çağırabiliyoruz
+
+        return Product::select('title','image','price','description','id')->limit(2)->orderByDesc('id')->get();;
+    }
 
 
 

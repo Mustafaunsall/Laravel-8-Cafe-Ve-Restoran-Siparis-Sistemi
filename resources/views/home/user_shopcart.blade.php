@@ -44,7 +44,7 @@
                         </thead>
                         <tbody>
                         @php
-                            $i=0;
+                            $total=0;
                         @endphp
                         @foreach($datalist as $rs)
                             <tr>
@@ -77,7 +77,7 @@
 
                             </tr>
                             @php
-                                $i+=($rs->product->price)*($rs->quantity);
+                                $total+=($rs->product->price)*($rs->quantity);
                             @endphp
                         @endforeach
                         <tr>
@@ -92,10 +92,12 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="cart-btn">
-
-                                        <button class="btn btn-success" type="submit"
-                                                onclick="window.open('./shop_checkout.html', '_self')">Checkout
+                                        <form action="{{route('user_order_add')}}" method="post">
+                                            @csrf
+                                            <input type="hidden"  name="total" value="{{$total}}">
+                                        <button class="btn btn-success" type="submit">Checkout
                                         </button>
+                                        </form>
                                     </div>
                                 </div>
                             </td>
@@ -112,7 +114,7 @@
                                 <tbody>
                                 <tr>
                                     <th>Cart Subtotal</th>
-                                    <td><span class="amount">{{$i}}  <i class="fa fa-turkish-lira"></i></span></td>
+                                    <td><span class="amount">{{$total}}  <i class="fa fa-turkish-lira"></i></span></td>
                                 </tr>
                                 <tr>
                                     <th>Shipping and Handling</th>
@@ -122,7 +124,7 @@
                                 </tr>
                                 <tr>
                                     <th>Order Total</th>
-                                    <td><strong><span class="amount">{{$i}} <i class="fa fa-turkish-lira"></i></span></strong></td>
+                                    <td><strong><span class="amount">{{$total}} <i class="fa fa-turkish-lira"></i></span></strong></td>
                                 </tr>
                                 </tbody>
                             </table>

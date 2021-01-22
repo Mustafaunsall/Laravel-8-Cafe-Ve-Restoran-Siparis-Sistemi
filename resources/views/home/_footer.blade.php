@@ -12,20 +12,23 @@
             </div>
             <div class="col-md-4  col-sm-6">
                 <h1>Recent post</h1>
+                @php
+                   $data=\App\Http\Controllers\HomeController::footerlastproduct();
+                 @endphp
+                @foreach($data as $rs)
                 <div class="footer-blog clearfix">
-                    <a href="./blog_right_sidebar.html">
-                        <img src="{{asset('assets')}}/restaurant/img/thumb8.png" class="img-responsive footer-photo" alt="blog photos">
-                        <p class="footer-blog-text">Hand picked ingredients for our best customers</p>
-                        <p class="footer-blog-date">29 may 2015</p>
+                    <a href="{{route('product',['id'=>$rs->id])}}">
+                        <img src="{{Storage::url($rs->image)}}" height="140" width="90" class="img-responsive footer-photo" alt="blog photos">
+                        <p class="footer-blog-text">{{$rs->title}}</p>
                     </a>
+                    <div class="footer-address">
+                        <p >{{$rs->description}}</p>
+                    </div>
+                        <p class="footer-blog-date">{{$rs->created_at}}</p>
+
                 </div>
-                <div class="footer-blog clearfix last">
-                    <a href="./blog_right_sidebar.html">
-                        <img src="{{asset('assets')}}/restaurant/img/thumb9.png" class="img-responsive footer-photo" alt="blog photos">
-                        <p class="footer-blog-text">Daily special foods that you will going to love</p>
-                        <p class="footer-blog-date">29 may 2015</p>
-                    </a>
-                </div>
+                @endforeach
+
             </div>
 
             <div class="col-md-4  col-sm-6">

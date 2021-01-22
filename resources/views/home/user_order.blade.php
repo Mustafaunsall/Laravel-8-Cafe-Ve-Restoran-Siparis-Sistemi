@@ -1,7 +1,7 @@
 
 @extends('layouts.home')
 
-@section('title', 'User Review')
+@section('title', 'User Order')
 
 @section('content')
 
@@ -10,8 +10,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h2 class="text-uppercase wow fadeInDown">User Reviews</h2>
-                    <p class="wow fadeInUp">Read your Reviews</p>
+                    <h2 class="text-uppercase wow fadeInDown">User Orders</h2>
+                    <p class="wow fadeInUp">Read your Orders</p>
                 </div>
             </div>
         </div>
@@ -30,19 +30,22 @@
                <div class="col-md-10">
 
 
-                                   <h3>Recent Reviews</h3>
+                                   <h3>Recent Order</h3>
                                    <br>
                                    <table class="cart-table account-table table table-bordered">
                                        <thead>
                                        <tr>
                                            <th>Id</th>
-                                           <th>Product</th>
-                                           <th>Subject</th>
-                                           <th>Review</th>
-                                           <th>Rate</th>
-                                           <th>Status</th>
+                                           <th>Name</th>
+                                           <th>Tableno</th>
+                                           <th>Phone</th>
+                                           <th>Email</th>
+                                           <th>Address</th>
+                                           <th>Total</th>
                                            <th>Date</th>
-                                           <th>Actions</th>
+                                           <th>Status</th>
+                                           <th>Detail</th>
+
                                        </tr>
                                        </thead>
                                        <tbody>
@@ -53,24 +56,31 @@
                                               {{$rs->id}}
                                            </td>
                                            <td>
-                                               <a href="{{route('product',['id'=>$rs->product->id])}}">{{$rs->product->title}}</a>
+                                               {{$rs->name}}
                                            </td>
                                            <td>
-                                               {{$rs->subject}}
+                                               {{$rs->table_no}}
                                            </td>
                                            <td>
-                                               {{$rs->review}}
+                                               {{$rs->phone}}
                                            </td>
                                            <td>
-                                               {{$rs->rate}}
+                                               {{$rs->email}}
                                            </td>
                                            <td>
-                                               {{$rs->status}}
+                                               {{$rs->address}}
+                                           </td>
+                                           <td>
+                                               {{$rs->total}}
                                            </td>
                                            <td>
                                                {{$rs->created_at}}
                                            </td>
-                                           <td><a href="{{route('user_reviews_delete',['id'=>$rs->id])}}" onclick="return confirm('delete are you sure')"><img style="height: 20px; width: 20px" src="{{ asset('assets/admin/images') }}/sil.png"></a></td>
+                                           <td>
+                                               {{$rs->status}}
+                                           </td>
+                                           <td><a href="{{route('user_order_show',['id'=>$rs->id])}}" ><img style="height: 35px; width: 35px" src="{{ asset('assets/admin/images') }}/search.png"></a> </td>
+
                                        </tr>
                                        @endforeach
 
