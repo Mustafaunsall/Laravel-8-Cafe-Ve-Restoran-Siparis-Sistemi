@@ -46,6 +46,7 @@
                                            <th>Status</th>
                                            <th>Detail</th>
 
+
                                        </tr>
                                        </thead>
                                        <tbody>

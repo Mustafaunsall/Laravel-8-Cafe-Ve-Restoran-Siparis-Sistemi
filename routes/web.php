@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\MessageController;
+use App\Http\Controllers\Admin\OrderContoller as AdminOrderController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ShopcartController;
@@ -114,6 +115,20 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::get('delete/{id}', [FaqController::class, 'destroy'])->name('admin_faq_delete');
 
     });
+   //Order
+    Route::prefix('order')->group(function (){
+
+        Route::get('/', [AdminOrderController::class, 'index'])->name('admin_orders');
+        Route::get('list/{status}', [AdminOrderController::class, 'list'])->name('admin_order_list');
+        Route::post('create', [AdminOrderController::class, 'create'])->name('admin_order_add');
+        Route::post('store', [AdminOrderController::class, 'store'])->name('admin_order_store');
+        Route::get('show/{id}', [AdminOrderController::class, 'show'])->name('admin_order_show');
+        Route::post('update/{id}', [AdminOrderController::class, 'update'])->name('admin_order_update');
+        Route::post('itemupdate/{id}', [AdminOrderController::class, 'itemupdate'])->name('admin_order_item_update');
+        Route::get('edit/{id}', [AdminOrderController::class, 'edit'])->name('admin_order_edit');
+        Route::get('delete/{id}', [AdminOrderController::class, 'destroy'])->name('admin_order_delete');
+
+    });
 
 });
 
@@ -138,7 +153,7 @@ Route::middleware('auth')->prefix('user')->namespace('user')->group(function (){
         Route::get('delete/{id}', [ShopcartController::class, 'destroy'])->name('user_shopcart_delete');
 
     });
-
+    //User Order
     Route::prefix('order')->group(function (){
 
         Route::get('/', [OrderController::class, 'index'])->name('user_orders');

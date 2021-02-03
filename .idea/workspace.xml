@@ -19,29 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1549e5a0-c560-4d36-93a9-8ad7db103509" name="Default Changelist" comment=" Shop Cart Alışveriş Sepeti">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Orderitem.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_21_181814_create_orders_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_21_183318_order.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_21_183413_create_orderitems_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_21_185136_orderitem.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/images/search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/user_order.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/user_order_add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/user_order_item.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c9a25e9b-1858-4051-83fc-81eb415aa2a4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c9a25e9b-1858-4051-83fc-81eb415aa2a4.xml" afterDir="false" />
+    <list default="true" id="1549e5a0-c560-4d36-93a9-8ad7db103509" name="Default Changelist" comment=" Order Product  Satin alma">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderContoller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/order_items.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/orders.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/ckfinder/core/connector/php/vendor/cksource/ckfinder" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/ckfinder/core/connector/php/vendor/cksource/ckfinder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/_footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/_slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_slider.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/user_reviews.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user_reviews.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/user_shopcart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user_shopcart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/usermenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/usermenu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/user_order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user_order.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,15 +65,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/home" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\php\blogj\resources\views\home" />
       <recent name="C:\php\blogj\resources\views\admin" />
+      <recent name="C:\php\blogj\resources\views\home" />
       <recent name="C:\php\blogj\resources\views\layouts" />
     </key>
   </component>
@@ -136,7 +122,12 @@
       <workItem from="1610793938911" duration="9508000" />
       <workItem from="1610808616785" duration="27972000" />
       <workItem from="1611135749716" duration="41591000" />
-      <workItem from="1611227956062" duration="32006000" />
+      <workItem from="1611227956062" duration="32176000" />
+      <workItem from="1611312018694" duration="499000" />
+      <workItem from="1611767471393" duration="367000" />
+      <workItem from="1612211636105" duration="2471000" />
+      <workItem from="1612292737498" duration="11697000" />
+      <workItem from="1612354014169" duration="4701000" />
     </task>
     <task id="LOCAL-00001" summary="humberger add">
       <created>1607284706580</created>
@@ -299,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611241592742</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary=" Order Product  Satin alma">
+      <created>1611274305011</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1611274305011</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,6 +338,7 @@
     <MESSAGE value=" Reviews with Jetstream Livewire and Manage at User and Admin Panel" />
     <MESSAGE value="Accordion Menu Sıkça Sorulan Sorular" />
     <MESSAGE value=" Shop Cart Alışveriş Sepeti" />
-    <option name="LAST_COMMIT_MESSAGE" value=" Shop Cart Alışveriş Sepeti" />
+    <MESSAGE value=" Order Product  Satin alma" />
+    <option name="LAST_COMMIT_MESSAGE" value=" Order Product  Satin alma" />
   </component>
 </project>
