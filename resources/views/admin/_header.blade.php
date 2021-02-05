@@ -11,7 +11,10 @@
 
                     <a href="javascript:" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                         @auth()
-                        <img src="{{Storage::url(Auth::user()->profile_photo_path)}}" alt="">{{ Auth::user()->name}}
+                            @if(Auth::user()->profile_photo_path)
+                               <img src="{{Storage::url(Auth::user()->profile_photo_path)}}" alt="">
+                            @endif
+                            {{ Auth::user()->name}}
                         @endauth
                     </a>
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">

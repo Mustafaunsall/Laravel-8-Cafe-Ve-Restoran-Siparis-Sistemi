@@ -19,15 +19,35 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1549e5a0-c560-4d36-93a9-8ad7db103509" name="Default Changelist" comment=" Order Product  Satin alma">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderContoller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/order_items.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/orders.blade.php" afterDir="false" />
+    <list default="true" id="1549e5a0-c560-4d36-93a9-8ad7db103509" name="Default Changelist" comment=" Order Admin panel yönetimi">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckAdmin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Role.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_04_134501_create_roles_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_04_134831_roles.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_04_135702_create_role_user_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_04_140146_role_user.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user_edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user_roles.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user_show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c9a25e9b-1858-4051-83fc-81eb415aa2a4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c9a25e9b-1858-4051-83fc-81eb415aa2a4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/ckfinder/core/connector/php/vendor/aws/aws-sdk-php/src/data/cognito-identity/2014-06-30/api-2.json.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/ckfinder/core/connector/php/vendor/aws/aws-sdk-php/src/data/cognito-identity/2014-06-30/api-2.json.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/ckfinder/core/connector/php/vendor/aws/aws-sdk-php/src/data/iam/2010-05-08/api-2.json.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/ckfinder/core/connector/php/vendor/aws/aws-sdk-php/src/data/iam/2010-05-08/api-2.json.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/ckfinder/core/connector/php/vendor/aws/aws-sdk-php/src/data/iam/2010-05-08/paginators-1.json.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/ckfinder/core/connector/php/vendor/aws/aws-sdk-php/src/data/iam/2010-05-08/paginators-1.json.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/ckfinder/core/connector/php/vendor/aws/aws-sdk-php/src/data/workdocs/2016-05-01/api-2.json.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/ckfinder/core/connector/php/vendor/aws/aws-sdk-php/src/data/workdocs/2016-05-01/api-2.json.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/ckfinder/core/connector/php/vendor/cksource/ckfinder" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/ckfinder/core/connector/php/vendor/cksource/ckfinder" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/user_order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user_order.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/orders.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/orders.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/reviews.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/reviews.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/usermenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/usermenu.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +147,10 @@
       <workItem from="1611767471393" duration="367000" />
       <workItem from="1612211636105" duration="2471000" />
       <workItem from="1612292737498" duration="11697000" />
-      <workItem from="1612354014169" duration="4701000" />
+      <workItem from="1612354014169" duration="6231000" />
+      <workItem from="1612366601253" duration="10491000" />
+      <workItem from="1612428783369" duration="29881000" />
+      <workItem from="1612521986693" duration="11716000" />
     </task>
     <task id="LOCAL-00001" summary="humberger add">
       <created>1607284706580</created>
@@ -297,7 +320,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611274305011</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary=" Order Admin panel yönetimi">
+      <created>1612363793565</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1612363793565</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,6 +369,7 @@
     <MESSAGE value="Accordion Menu Sıkça Sorulan Sorular" />
     <MESSAGE value=" Shop Cart Alışveriş Sepeti" />
     <MESSAGE value=" Order Product  Satin alma" />
-    <option name="LAST_COMMIT_MESSAGE" value=" Order Product  Satin alma" />
+    <MESSAGE value=" Order Admin panel yönetimi" />
+    <option name="LAST_COMMIT_MESSAGE" value=" Order Admin panel yönetimi" />
   </component>
 </project>

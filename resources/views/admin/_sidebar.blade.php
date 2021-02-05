@@ -8,7 +8,9 @@
 <!-- menu profile quick info -->
 <div class="profile clearfix">
     <div class="profile_pic">
-        <img src="{{Storage::url(Auth::user()->profile_photo_path)}}" alt="..." class="img-circle profile_img">
+
+           <img src="{{Storage::url(Auth::user()->profile_photo_path)}}" alt="....." class="img-circle profile_img">
+
     </div>
     <div class="profile_info">
         @auth
@@ -33,7 +35,7 @@
                 <a href="{{route('admin_home')}}"><i class="fa fa-home"></i> Home </a>
             </li>
             <li>
-                <a href="{{route('admin_category')}}"><i class="fa fa-desktop"></i> Category </a></li>
+                <a href="{{route('admin_category')}}"><i class="fa fa-delicious"></i> Category </a></li>
             <li>
                 <a href="{{route('admin_product')}}"><i class="fa fa-shopping-cart"></i> Product </a>
             </li>
@@ -41,13 +43,27 @@
                 <a href="{{route('admin_message')}} "><i class="fa fa-envelope"></i>Contact Message </a>
             </li>
             <li>
-                <a href="{{route('admin_review')}} "><i class="fa fa-star-half-empty"></i>Reviews </a>
+                <a href="{{route('admin_review')}} "><i class="fa fa-comment"></i>Reviews </a>
             </li>
             <li>
                 <a href="{{route('admin_faq')}} "><i class="fa fa-question-circle"></i>FAQ </a>
             </li>
             <li>
                 <a href="{{route('admin_setting')}} "><i class="fa fa-cog"></i> Settings </a>
+            </li>
+            <li>
+                <a href="{{route('admin_users')}} "><i class="fa fa-users"></i> Users </a>
+            </li>
+            <li><a><i class="fa fa-shopping-bag"></i> Orders <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="{{route('admin_orders')}}">All Orders</a></li>
+                    <li><a href="{{route('admin_order_list',['status'=>'new'])}}">New Orders</a></li>
+                    <li><a href="{{route('admin_order_list',['status'=>'accepted'])}}">Accepted Orders</a></li>
+                    <li><a href="{{route('admin_order_list',['status'=>'preparing'])}}">Preparing Orders</a></li>
+                    <li><a href="{{route('admin_order_list',['status'=>'canceled'])}}">Canceled Orders</a></li>
+                    <li><a href="{{route('admin_order_list',['status'=>'completed'])}}">Completed Orders</a></li>
+
+                </ul>
             </li>
 
         </ul>
@@ -56,15 +72,7 @@
         <h3>Live On</h3>
         <ul class="nav side-menu">
 
-            <li><a><i class="fa fa-windows"></i> Orders <span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                    <li><a href="{{route('admin_order_list',['status'=>'new'])}}">New Orders</a></li>
-                    <li><a href="{{route('admin_order_list',['status'=>'accepted'])}}">Accepted Orders</a></li>
-                    <li><a href="{{route('admin_order_list',['status'=>'preparing'])}}">Preparing Orders</a></li>
-                    <li><a href="{{route('admin_order_list',['status'=>'canceled'])}}">Canceled Orders</a></li>
-                    <li><a href="{{route('admin_orders')}}">Orders</a></li>
-                </ul>
-            </li>
+
             <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
 
 

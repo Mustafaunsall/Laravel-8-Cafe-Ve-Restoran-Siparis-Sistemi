@@ -60,7 +60,8 @@
                                                         {{$rs->id}}
                                                     </td>
                                                     <td>
-                                                        {{$rs->user->name}}
+                                                        <a href="{{route('admin_user_show',['id'=>$rs->user->id])}}" onclick="return !window.open(this.href,'targetWindow','top=50 left=50 with=600,height=300')">
+                                                            {{$rs->user->name}}</a>
                                                     </td>
                                                     <td>
                                                         {{$rs->name}}

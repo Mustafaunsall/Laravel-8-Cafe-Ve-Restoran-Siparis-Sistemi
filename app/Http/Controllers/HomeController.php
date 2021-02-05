@@ -76,7 +76,7 @@ class HomeController extends Controller
     public function product($id){
          $data=Product::find($id);
          $list=Image::where('product_id',$id)->get();
-        $reviews=Review::where('product_id',$id)->get();
+        $reviews=Review::where('product_id',$id)->where('status','True')->get();
          //print_r($data->title);
          //exit();
         return view('home.product_detail',['data'=>$data,'list'=>$list,'reviews'=>$reviews]);

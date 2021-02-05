@@ -131,19 +131,28 @@
 
                                 <div class="cart-content dropdown-menu">
                                     <div class="cart-title">
-                                        <h4>{{ Auth::user()->name}}</h4>
+                                        <h4>{{ Auth::user()->name}}
+                                            <!--{{$diz=Auth::user()->roles->pluck('name')}}
+
+                                            -->
+                                            (
+                                            @foreach($diz as $rs)
+                                                {{$rs}}@if(count($diz)>1) ,  @endif
+                                            @endforeach
+                                            )
+                                        </h4>
                                     </div>
                                     <div class="cart-items">
                                         <div class="cart-item clearfix">
                                             <div class="cart-item-desc">
                                                 <h4><a class="dropdown-item" href="{{ route('myprofile') }}"><i
-                                                            class="fa fa-user"></i>My Account</a></h4>
+                                                            class="fa fa-user"></i> My Account</a></h4>
                                             </div>
                                         </div>
                                         <div class="cart-item clearfix">
                                             <div class="cart-item-desc">
                                                 <h4><a class="dropdown-item" href="{{ route('myreviews') }}"><i
-                                                            class="fa fa-heart-o"></i>My Reviews</a></h4>
+                                                            class="fa fa-comment"></i> My Reviews</a></h4>
                                             </div>
                                         </div>
                                         <div class="cart-item clearfix">
