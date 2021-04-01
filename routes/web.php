@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\MenuwishController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\OrderContoller as AdminOrderController;
 use App\Http\Controllers\HomeController;
@@ -27,6 +28,7 @@ Route::get('/home2', function () {    //eski user laravelin sayfası
 /*Route::get('/', function () {   //sadece bir dosya çağıracaksak burdanda viewe çağırabiliriz
     return view('home.index');//viewe isim gönderebiliyoruz routedan   , ['name' => 'Mustafa Ünsal']
 });*/
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 //Home
 Route::get('/home', [HomeController::class, 'index'])->name('homepage');
@@ -37,7 +39,20 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::get('/product/{id}', [HomeController::class, 'product'])->name('product');
 Route::get('/categoryproducts/{id}', [HomeController::class, 'categoryproducts'])->name('categoryproducts');
+#menu
+Route::middleware('auth')->prefix('/')->group(function () {
 
+
+
+    Route::post('/menuwishcreate', [HomeController::class, 'menuwishcreate'])->name('menuwishcreate');
+    Route::get('/menuwish', [HomeController::class, 'menuwish'])->name('menuwish');
+    Route::get('/menuwishshow', [HomeController::class, 'menuwishshow'])->name('menuwishshow');
+    #menu permission
+    Route::middleware('menu')->group(function () {
+        Route::get('/menu', [HomeController::class, 'menu'])->name('menu');
+        Route::get('/menutile', [HomeController::class, 'menutile'])->name('menutile');
+    });
+});
 //search
 Route::post('/getproduct', [HomeController::class, 'getproduct'])->name('getproduct');
 Route::get('/productlist/{search}', [HomeController::class, 'productlist'])->name('productlist');
@@ -128,6 +143,19 @@ Route::middleware('auth')->prefix('admin')->group(function () {
             Route::post('itemupdate/{id}', [AdminOrderController::class, 'itemupdate'])->name('admin_order_item_update');
             Route::get('edit/{id}', [AdminOrderController::class, 'edit'])->name('admin_order_edit');
             Route::get('delete/{id}', [AdminOrderController::class, 'destroy'])->name('admin_order_delete');
+
+        });
+        //Menuwish
+        Route::prefix('menuwish')->group(function () {
+
+            Route::get('/', [MenuwishController::class, 'index'])->name('admin_menuwish');
+            Route::get('list/{status}', [MenuwishController::class, 'list'])->name('admin_menuwish_list');
+            Route::post('create', [MenuwishController::class, 'create'])->name('admin_menuwish_add');
+            Route::post('store', [MenuwishController::class, 'store'])->name('admin_menuwish_store');
+            Route::get('show/{id}', [MenuwishController::class, 'show'])->name('admin_menuwish_show');
+            Route::post('update/{id}', [MenuwishController::class, 'update'])->name('admin_menuwish_update');
+            Route::get('edit/{id}', [MenuwishController::class, 'edit'])->name('admin_menuwish_edit');
+            Route::get('delete/{id}', [MenuwishController::class, 'destroy'])->name('admin_menuwish_delete');
 
         });
         //User

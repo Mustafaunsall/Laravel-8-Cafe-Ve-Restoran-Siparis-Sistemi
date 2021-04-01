@@ -36,20 +36,7 @@
                 </aside>
 
                 <div class="col-md-9">
-                    <div class="shop-grid">
-                        <select>
-                            <option>Default Sorting</option>
-                            <option>Cakes</option>
-                            <option>Breads</option>
-                            <option>Fries</option>
-                            <option>Pizza</option>
-                        </select>
-                        <div class="sg-list">
-                            <a href="./shop_left_sidebar.html"><i class="fa fa-th-large"></i></a>
-                            <a href="./shop_right_sidebar.html"><i class="fa fa-reorder"></i></a>
-                        </div>
-                        <span>Showing 1-9 of 80 Results</span>
-                    </div>
+
 
                     <div class="shop-products">
                         <div class="row">

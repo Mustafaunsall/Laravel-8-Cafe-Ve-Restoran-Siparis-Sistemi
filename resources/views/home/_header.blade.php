@@ -27,31 +27,45 @@
                             <a href="{{route('home')}}" role="button">Home<span></span></a>
                         </li>
 
-                        <li class="dropdown">
-                            <a href="./shop_fullwidth.html" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-haspopup="true" aria-expanded="false">Menü<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="./shop_single_full.html">Shop - Single <span
-                                            class="caret-right"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="./shop_single_full.html">Shop - Full</a></li>
-                                        <li><a href="./shop_single_left.html">Shop - Left Sidebar</a></li>
-                                        <li>
-                                            <a href="./shop_single_right.html">Shop - Right Sidebar<span
-                                                    class="caret-right"></span></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="./recipe_detail-image.html">Recipe - Image</a></li>
-                                                <li><a href="./recipe_detail-slider.html">Recipe - Gallery</a></li>
-                                            </ul>
 
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="./shop_cart.html">Shop - Cart</a></li>
+                        <li class="dropdown">
+                             @auth
+                                    <!--{{$usermenuwish = Auth::user()->menuwish->pluck('status')}}-->
+                                    <!--{{$userRoles = Auth::user()->roles->pluck('name')}}-->
+                                <a
+                                    @if($userRoles->contains('admin') or $userRoles->contains('waiter') or $usermenuwish->contains('Accepted') )
+                                    href="{{route('menu')}}"
+                                    @else
+                                    href="{{route('menuwish')}}"
+                                    @endif
+                                    class="dropdown-toggle" data-toggle="dropdown"
+                                    role="button"
+                                    aria-haspopup="true" aria-expanded="false">Menus<span class="caret"></span></a>
+                            @endauth
+                            @guest
+                                     <a href="{{route('login')}}" class="dropdown-toggle" data-toggle="dropdown"
+                                         role="button"
+                                         aria-haspopup="true" aria-expanded="false">Menus<span class="caret"></span></a>
+                            @endguest
+                            <ul class="dropdown-menu">
+
+                                @auth
+                                        <!--{{$usermenuwish = Auth::user()->menuwish->pluck('status')}}-->
+                                        <!--{{$userRoles = Auth::user()->roles->pluck('name')}}-->
+                                    @if($userRoles->contains('admin') or $userRoles->contains('waiter') or $usermenuwish->contains('Accepted') )
+                                        <li><a href="{{route('menu')}}">Menu Overlay</a></li>
+                                        <li><a href="{{route('menutile')}}">Menu Tile</a></li>
+                                    @else
+                                        <li><a href="{{route('menuwish')}}">Menu Wish </a></li>
+                                    @endif
+                                @endauth
+                                @guest
+                                    <li><a href="{{route('login')}}">Menu Wish</a></li>
+                                @endguest
 
                             </ul>
                         </li>
+
                         <li class="dropdown">
                             <a href="./shop_fullwidth.html" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true" aria-expanded="false">Category<span class="caret"></span></a>
@@ -132,14 +146,15 @@
                                 <div class="cart-content dropdown-menu">
                                     <div class="cart-title">
                                         <h4>{{ Auth::user()->name}}
-                                            <!--{{$diz=Auth::user()->roles->pluck('name')}}
+                                            <br>
+                                        <!--{{$diz=Auth::user()->roles->pluck('name')}}
 
                                             -->
-                                            (
+
                                             @foreach($diz as $rs)
                                                 {{$rs}}@if(count($diz)>1) ,  @endif
                                             @endforeach
-                                            )
+
                                         </h4>
                                     </div>
                                     <div class="cart-items">

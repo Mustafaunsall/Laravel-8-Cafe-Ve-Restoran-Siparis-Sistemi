@@ -117,7 +117,8 @@
                                                             <img src="{{ Storage::url($rs->profile_photo_path)}}" height="50px" width="50" alt="" style="border-radius: 10px">
                                                         @endif
                                                     </td>
-                                                    <td>{{$rs->name}}</td>
+                                                    <td><a href="{{route('admin_user_show',['id'=>$rs->id])}}" onclick="return !window.open(this.href,'targetWindow','top=50  with=600,height=300')">
+                                                            {{$rs->name}}</a></td>
                                                     <td>{{$rs->email}}</td>
                                                     <td>{{$rs->phone}}</td>
                                                     <td>{{$rs->adress}}</td>

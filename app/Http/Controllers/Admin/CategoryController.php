@@ -26,6 +26,16 @@ class CategoryController extends Controller
 
         return  CategoryController::getParentsTree($parent, $title);
     }
+    public static function getParent($category, $title){  //static fonksiyon olmazsa dışarıdan erişme olmuyor
+        if ($category->parent_id==0){
+
+            return $title;
+        }
+        $catego=Category::find($category->parent_id);//parente getiriyor
+        $title=$catego->title; //parent>child şekilde değişkene atıyor
+
+        return  CategoryController::getParentsTree($catego, $title);
+    }
 
     /**
      * Display a listing of the resource.

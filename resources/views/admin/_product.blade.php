@@ -96,9 +96,10 @@
                                             <thead>
                                             <tr>
                                                 <th>İd</th>
+                                                <th>Who Added</th>
                                                 <th>Category</th>
                                                 <th>Title</th>
-                                                <th>Keywords</th>
+                                                <!--<th>Keywords</th>-->
                                                 <th>Description</th>
                                                 <th>Image</th>
                                                 <th>Image Gallery</th>
@@ -115,9 +116,11 @@
 
                                                 <tr>
                                                     <td>{{$rs->id}}</td>
+                                                    <td><a href="{{route('admin_user_show',['id'=>$rs->user->id])}}" onclick="return !window.open(this.href,'targetWindow','top=50  with=600,height=300')">
+                                                            {{$rs->user->name}}</a></td>
                                                     <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category,$rs->category->title)}}</td>
                                                     <td>{{$rs->title}}</td>
-                                                    <td>{{$rs->keywords}}</td>
+                                                    <!--<td>{{$rs->keywords}}</td>-->
                                                     <td>{{$rs->description}}</td>
                                                     <td>
                                                         @if($rs->image)

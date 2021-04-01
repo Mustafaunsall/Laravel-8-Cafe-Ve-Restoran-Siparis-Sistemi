@@ -26,5 +26,9 @@ class Product extends Model
     {
         return $this->hasMany(Orderitem::class);
     }
+    public function user(){
+
+        return $this->belongsTo(User::class);
+    }
 
 }

@@ -11,7 +11,7 @@ class Search extends Component
 
     public function render()
     {                                     #başında ve sonunda benzer olanları
-        $datalist=Product::where('title','like','%'.$this->search.'%')->get();
+        $datalist=Product::where('title','like','%'.$this->search.'%')->where('status','True')->get();
 
         return view('livewire.search',['datalist'=>$datalist,'query'=>$this->search]);
     }                                                               #boş olup olmaması

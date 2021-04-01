@@ -40,10 +40,10 @@
                                            <th>Tableno</th>
                                            <th>Phone</th>
                                            <th>Email</th>
-                                           <th>Address</th>
                                            <th>Total</th>
                                            <th>Date</th>
                                            <th>Status</th>
+                                           <th>Admin Note</th>
                                            <th>Detail</th>
 
 
@@ -69,9 +69,6 @@
                                                {{$rs->email}}
                                            </td>
                                            <td>
-                                               {{$rs->address}}
-                                           </td>
-                                           <td>
                                                {{$rs->total}}
                                            </td>
                                            <td>
@@ -79,6 +76,9 @@
                                            </td>
                                            <td>
                                                {{$rs->status}}
+                                           </td>
+                                           <td>
+                                               {{$rs->note}}
                                            </td>
                                            <td><a href="{{route('user_order_show',['id'=>$rs->id])}}" ><img style="height: 35px; width: 35px" src="{{ asset('assets/admin/images') }}/search.png"></a> </td>
 

@@ -86,15 +86,17 @@
                         </div>
                     </div>
                     <p>{{$data->description}}.</p>
-                    <form action="{{route('user_shopcart_add',['id'=>$data->id])}}" method="post">
-                        @csrf
+
                         <div class="quantity">
-                            <input type="number" name="quantity" value="1" max="5">QTY
-                            <a href="./shop_checkout.html" class="btn btn-success left-space-sm pull-right">Buy Now</a>
+                            <form action="{{route('user_shopcart_add',['id'=>$data->id])}}" method="post">
+                                @csrf
+                            <input type="number" name="quantity" value="1" min="1" max="10">QTY
                             <button type="submit"  class="btn btn-default pull-right">Add to
                                 Cart</button>
+                            </form>
                         </div>
-                    </form>
+
+
                 </div>
             </div>
 

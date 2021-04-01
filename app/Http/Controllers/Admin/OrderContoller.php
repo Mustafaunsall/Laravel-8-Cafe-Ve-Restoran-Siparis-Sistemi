@@ -19,11 +19,14 @@ class OrderContoller extends Controller
         $datalist = Order::all();
         return view('admin.orders',['datalist' => $datalist]);
     }
+
     public function list($status)
     {
         $datalist = Order::where('status',$status)->get();
         return view('admin.orders',['datalist' => $datalist]);
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -87,6 +90,7 @@ class OrderContoller extends Controller
 
         return redirect()->back()->with('success','Order Updated');
     }
+
     public function itemupdate(Request $request, Order $order,$id)
     {
         $data= Orderitem::find($id);
